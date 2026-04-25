@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Skeleton</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing-skeleton.css">
+</head>
+
+<body>
+  <main class="mockup-shell">
+    <p class="view-label">Home - Desktop</p>
+
+    <div class="site-frame">
+      <header class="topbar">
+        <div class="logo-block" aria-hidden="true"></div>
+        <nav class="main-nav" aria-label="Navegacao principal">
+          <a href="#">Home</a>
+          <a href="#">Produtos</a>
+          <a href="#">Catalogos</a>
+          <a href="#">Assistencia</a>
+          <a href="#">Contato</a>
+        </nav>
+        <a class="topbar-cta" href="#" aria-label="Botao principal"></a>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>Solucoes Complete em<br>Implementos Roditarios</h1>
+          <p>
+            Desenvolvimento, producao e distribuicao de implementos para todos os
+            segmentos de transporte. Qualidade comprovada ha mais de 70 anos.
+          </p>
+          <a href="#" class="hero-button" aria-label="Botao hero"></a>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="hero-road"></div>
+          <div class="media-truck"></div>
+        </div>
+      </section>
+
+      <section class="products">
+        <h2>Nossas Linhas de Produtos</h2>
+        <div class="product-grid">
+          <button class="product-card" type="button" data-category="Linha Rodoviaria">
+            <span class="product-card__label">Linha Rodoviaria</span>
+          </button>
+          <button class="product-card" type="button" data-category="Linha Urbana">
+            <span class="product-card__label">Linha Urbana</span>
+          </button>
+          <button class="product-card" type="button" data-category="Linha Off-Road">
+            <span class="product-card__label">Linha Off-Road</span>
+          </button>
+          <button class="product-card" type="button" data-category="Linha Frigorificada">
+            <span class="product-card__label">Linha Frigorificada</span>
+          </button>
+          <button class="product-card" type="button" data-category="Linha Especial">
+            <span class="product-card__label">Linha Especial</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="support">
+        <div class="support-left">
+          <h3>Precisa de ajuda para escolher?</h3>
+          <p>
+            Nossa equipe tecnica esta pronta para auxiliar voce a encontrar a melhor
+            solucao para sua operacao.
+          </p>
+          <a href="#" class="support-cta" aria-label="Contato"></a>
+        </div>
+        <div class="support-right">
+          <h4>Baixe nossos catalogos</h4>
+          <div class="catalog-hover-zone">
+            <div class="catalog-actions">
+              <a href="#" class="catalog-btn catalog-btn--main" aria-label="Preview"></a>
+              <a href="#" class="catalog-btn" aria-label="Download"></a>
+            </div>
+            <div class="catalog-preview-pop" role="note" aria-label="Preview do catalogo">
+              <div class="sheet-stack" aria-hidden="true">
+                <span class="sheet sheet--a"></span>
+                <span class="sheet sheet--b"></span>
+                <span class="sheet sheet--c"></span>
+              </div>
+              <p>Olha, isso que vai ter nesse catalogo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-logo" aria-hidden="true"></div>
+        <p class="footer-copy">Ha mais de 70 anos desenvolvendo solucoes para o transporte brasileiro.</p>
+        <ul class="footer-links">
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Catalogos</a></li>
+          <li><a href="#">Assistencia Tecnica</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Sobre Nos</a></li>
+        </ul>
+        <div class="footer-contact">
+          <p>+55 17 3426-2000</p>
+          <p>contato@facchini.com.br</p>
+          <p>Votuporanga - SP</p>
+        </div>
+        <p class="footer-legal">&copy; 2024 Auto Parts. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+  </main>
+  <div class="product-transition-layer" id="productTransitionLayer" aria-hidden="true">
+    <div class="product-transition-card" id="productTransitionCard"></div>
+    <p class="product-transition-text" id="productTransitionText"></p>
+  </div>
+  <script src="assets/js/landing-skeleton.js"></script>
+</body>
+
+</html>

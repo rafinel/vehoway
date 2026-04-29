@@ -1,0 +1,1 @@
+Sempre responda em PT-BR.

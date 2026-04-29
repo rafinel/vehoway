@@ -1,0 +1,18 @@
+schema: spec-driven
+
+Example:
+  context: |
+    documentation/prd.md
+    documentation/archtecture.md
+    documentation/design.md
+
+rules:
+    proposal:
+      - In PT-BR
+      - Always include a "Non-goals" section
+    spec:
+      - In PT-BR
+    design:
+      - In PT-BR
+    tasks:
+      - In PT-BR

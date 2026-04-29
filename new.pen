@@ -4,7 +4,7 @@
     {
       "type": "frame",
       "id": "oproa",
-      "x": 46872,
+      "x": 46869,
       "y": -2021,
       "name": "VEHOWAY Homepage",
       "width": 1496,
@@ -41,37 +41,25 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "0eu2m",
-                  "name": "vhLogoSymA",
+                  "id": "aFd9k",
+                  "name": "prodLogoSym",
                   "width": 42,
                   "height": 42,
-                  "fill": "#050505",
+                  "fill": "$--black-primary",
                   "cornerRadius": 10,
                   "layout": "none",
                   "children": [
                     {
-                      "type": "rectangle",
-                      "cornerRadius": 2,
-                      "id": "L2QQ0",
-                      "x": 10,
-                      "y": 9,
-                      "name": "vhLogoSlashA",
-                      "rotation": -29.999999999999996,
-                      "fill": "#FFFFFF",
-                      "width": 10,
-                      "height": 24
-                    },
-                    {
-                      "type": "polygon",
-                      "polygonCount": 3,
-                      "id": "lXA0b",
-                      "x": 23,
-                      "y": 13,
-                      "name": "vhLogoTriA",
-                      "rotation": 90,
-                      "fill": "#F6C21F",
-                      "width": 12,
-                      "height": 15
+                      "type": "text",
+                      "id": "DYKhV",
+                      "x": 11,
+                      "y": 4,
+                      "name": "prodLogoV",
+                      "fill": "$--yellow-primary",
+                      "content": "V",
+                      "fontFamily": "Manrope",
+                      "fontSize": 28,
+                      "fontWeight": "900"
                     }
                   ]
                 },
@@ -87,6 +75,9 @@
                       "id": "aoHe1",
                       "name": "vhLogoWordA",
                       "fill": "#111827",
+                      "textGrowth": "fixed-width-height",
+                      "width": 147,
+                      "height": 34,
                       "content": "VEHOWAY",
                       "fontFamily": "Manrope",
                       "fontSize": 30,
@@ -97,7 +88,7 @@
                       "id": "brsAh",
                       "name": "vhLogoSubA",
                       "fill": "#6B7280",
-                      "content": "PARTS & LOGISTICS",
+                      "content": "autopeças rodoviárias",
                       "fontFamily": "Manrope",
                       "fontSize": 11,
                       "fontWeight": "600",
@@ -178,26 +169,6 @@
                   "name": "vhCatTxtA",
                   "fill": "#111827",
                   "content": "Catálogos",
-                  "fontFamily": "Manrope",
-                  "fontSize": 14,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "text",
-                  "id": "0cpEx",
-                  "name": "vhAssistTxtA",
-                  "fill": "#111827",
-                  "content": "Assistência",
-                  "fontFamily": "Manrope",
-                  "fontSize": 14,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "text",
-                  "id": "KZn9V",
-                  "name": "vhContTxtA",
-                  "fill": "#111827",
-                  "content": "Contato",
                   "fontFamily": "Manrope",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -309,47 +280,6 @@
               "height": 620
             },
             {
-              "type": "rectangle",
-              "id": "aO1D7",
-              "x": 900,
-              "y": 0,
-              "name": "vhHeroWarmB",
-              "fill": {
-                "type": "gradient",
-                "gradientType": "linear",
-                "enabled": true,
-                "opacity": 0.35,
-                "rotation": 180,
-                "size": {
-                  "height": 1
-                },
-                "colors": [
-                  {
-                    "color": "#F6C21F00",
-                    "position": 0
-                  },
-                  {
-                    "color": "#F6C21F59",
-                    "position": 1
-                  }
-                ]
-              },
-              "width": 596,
-              "height": 620
-            },
-            {
-              "type": "text",
-              "id": "HK6kw",
-              "x": 980,
-              "y": 120,
-              "name": "vhHeroMarkB",
-              "fill": "#FFFFFF14",
-              "content": "V",
-              "fontFamily": "Manrope",
-              "fontSize": 360,
-              "fontWeight": "800"
-            },
-            {
               "type": "frame",
               "id": "ctn2h",
               "x": 64,
@@ -438,31 +368,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "frame",
-              "id": "d9PX5",
-              "x": 640,
-              "y": 390,
-              "name": "vhHeroPartsB",
-              "width": 520,
-              "height": 230,
-              "fill": {
-                "type": "image",
-                "enabled": true,
-                "url": "images/generated-1777246845519.png",
-                "mode": "fill"
-              },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "#00000099",
-                "offset": {
-                  "x": 0,
-                  "y": 22
-                },
-                "blur": 38
-              }
             },
             {
               "type": "rectangle",
@@ -707,7 +612,7 @@
                   "name": "vhCard1C",
                   "clip": true,
                   "width": "fill_container",
-                  "height": 420,
+                  "height": 360,
                   "fill": "#FFFFFF",
                   "cornerRadius": 10,
                   "stroke": {
@@ -828,7 +733,7 @@
                   "name": "vhCard2C",
                   "clip": true,
                   "width": "fill_container",
-                  "height": 420,
+                  "height": 360,
                   "fill": "#FFFFFF",
                   "cornerRadius": 10,
                   "stroke": {
@@ -949,7 +854,7 @@
                   "name": "vhCard3C",
                   "clip": true,
                   "width": "fill_container",
-                  "height": 420,
+                  "height": 360,
                   "fill": "#FFFFFF",
                   "cornerRadius": 10,
                   "stroke": {
@@ -1070,7 +975,7 @@
                   "name": "vhCard4D",
                   "clip": true,
                   "width": "fill_container",
-                  "height": 420,
+                  "height": 360,
                   "fill": "#FFFFFF",
                   "cornerRadius": 10,
                   "stroke": {
@@ -1191,7 +1096,7 @@
                   "name": "vhCard5D",
                   "clip": true,
                   "width": "fill_container",
-                  "height": 420,
+                  "height": 360,
                   "fill": "#FFFFFF",
                   "cornerRadius": 10,
                   "stroke": {
@@ -1658,7 +1563,7 @@
                   "name": "vhHelpTitleF",
                   "fill": "#111827",
                   "textGrowth": "fixed-width",
-                  "width": "fill_container",
+                  "width": 520,
                   "content": "Precisa de ajuda para escolher?",
                   "lineHeight": 1.1,
                   "fontFamily": "Manrope",
@@ -1671,7 +1576,7 @@
                   "name": "vhHelpDescF",
                   "fill": "#6B7280",
                   "textGrowth": "fixed-width",
-                  "width": 390,
+                  "width": 498,
                   "content": "Fale com nossos especialistas e encontre a peça certa para sua necessidade.",
                   "lineHeight": 1.45,
                   "fontFamily": "Manrope",
@@ -1739,53 +1644,54 @@
                   "type": "frame",
                   "id": "m16c0",
                   "name": "vhSpecCard1F",
-                  "width": "fill_container",
+                  "width": 378,
                   "fill": "#FFFFFF",
-                  "cornerRadius": 12,
+                  "cornerRadius": 16,
                   "stroke": {
                     "align": "inside",
-                    "thickness": {
-                      "top": 1,
-                      "right": 1,
-                      "bottom": 1,
-                      "left": 2
-                    },
-                    "fill": "#E5E7EB"
+                    "thickness": 1,
+                    "fill": "$--gray-border"
                   },
                   "effect": {
                     "type": "shadow",
                     "shadowType": "outer",
-                    "color": "#00000014",
+                    "color": "#0F172A14",
                     "offset": {
                       "x": 0,
-                      "y": 6
+                      "y": 10
                     },
-                    "blur": 16
+                    "blur": 24
                   },
                   "layout": "vertical",
-                  "gap": 14,
-                  "padding": 14,
+                  "gap": 16,
+                  "padding": 16,
                   "children": [
                     {
                       "type": "frame",
                       "id": "XIqmc",
                       "name": "vhSpecTop1F",
                       "width": "fill_container",
-                      "gap": 14,
+                      "gap": 16,
+                      "alignItems": "center",
                       "children": [
                         {
                           "type": "frame",
                           "id": "IqnKN",
                           "name": "vhSpecImg1F",
                           "width": 120,
-                          "height": 152,
+                          "height": 156,
                           "fill": {
                             "type": "image",
                             "enabled": true,
                             "url": "images/generated-1777246392054.png",
                             "mode": "fill"
                           },
-                          "cornerRadius": 8
+                          "cornerRadius": 12,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "$--gray-border"
+                          }
                         },
                         {
                           "type": "frame",
@@ -1793,38 +1699,30 @@
                           "name": "vhSpecInfo1F",
                           "width": "fill_container",
                           "layout": "vertical",
-                          "gap": 6,
+                          "gap": 8,
                           "justifyContent": "center",
                           "children": [
                             {
                               "type": "text",
                               "id": "QKeT1",
                               "name": "vhSpecName1F",
-                              "fill": "#111827",
+                              "fill": "$--text-dark",
                               "content": "Rafael Souza",
                               "fontFamily": "Manrope",
-                              "fontSize": 24,
+                              "fontSize": 26,
                               "fontWeight": "800"
                             },
                             {
                               "type": "text",
                               "id": "RViNR",
                               "name": "vhSpecRole1F",
-                              "fill": "#4B5563",
-                              "content": "Especialista em Ferragens",
+                              "fill": "$--gray-text",
+                              "textGrowth": "fixed-width",
+                              "width": 181,
+                              "content": "Especialista em Ferragens Carretas Baú e Sider",
                               "fontFamily": "Manrope",
-                              "fontSize": 15,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "T90Mx",
-                              "name": "vhSpecLine1F",
-                              "fill": "#6B7280",
-                              "content": "Carretas Baú e Sider",
-                              "fontFamily": "Manrope",
-                              "fontSize": 15,
-                              "fontWeight": "600"
+                              "fontSize": 14,
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -1835,24 +1733,24 @@
                       "id": "vtPn4",
                       "name": "vhSpecActRow1F",
                       "width": "fill_container",
-                      "gap": 8,
+                      "gap": 10,
                       "children": [
                         {
                           "type": "frame",
                           "id": "fFftN",
                           "name": "vhSpecWa1F",
                           "width": "fill_container",
-                          "fill": "#FFF5D4",
-                          "cornerRadius": 6,
+                          "fill": "$--yellow-primary",
+                          "cornerRadius": 10,
                           "stroke": {
                             "align": "inside",
                             "thickness": 1,
-                            "fill": "#F2E3A8"
+                            "fill": "$--yellow-hover"
                           },
                           "gap": 6,
                           "padding": [
-                            10,
-                            12
+                            11,
+                            14
                           ],
                           "alignItems": "center",
                           "children": [
@@ -1883,17 +1781,17 @@
                           "id": "dMslx",
                           "name": "vhSpecMail1F",
                           "width": "fill_container",
-                          "fill": "#FFFFFF",
-                          "cornerRadius": 6,
+                          "fill": "$--white-soft",
+                          "cornerRadius": 10,
                           "stroke": {
                             "align": "inside",
                             "thickness": 1,
-                            "fill": "#E5E7EB"
+                            "fill": "$--gray-border"
                           },
                           "gap": 6,
                           "padding": [
-                            10,
-                            12
+                            11,
+                            14
                           ],
                           "alignItems": "center",
                           "children": [
@@ -1918,47 +1816,6 @@
                               "fontWeight": "700"
                             }
                           ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "ds5JN",
-                          "name": "vhSpecCall1F",
-                          "width": "fill_container",
-                          "fill": "#FFFFFF",
-                          "cornerRadius": 6,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#E5E7EB"
-                          },
-                          "gap": 6,
-                          "padding": [
-                            10,
-                            12
-                          ],
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "i54PU",
-                              "name": "vhSpecCallIc1F",
-                              "width": 14,
-                              "height": 14,
-                              "iconFontName": "phone",
-                              "iconFontFamily": "lucide",
-                              "fill": "#374151"
-                            },
-                            {
-                              "type": "text",
-                              "id": "YmqVN",
-                              "name": "vhSpecCallTx1F",
-                              "fill": "#374151",
-                              "content": "Ligar",
-                              "fontFamily": "Manrope",
-                              "fontSize": 13,
-                              "fontWeight": "700"
-                            }
-                          ]
                         }
                       ]
                     }
@@ -1968,53 +1825,54 @@
                   "type": "frame",
                   "id": "OgmRg",
                   "name": "vhSpecCard2G",
-                  "width": "fill_container",
+                  "width": 383,
                   "fill": "#FFFFFF",
-                  "cornerRadius": 12,
+                  "cornerRadius": 16,
                   "stroke": {
                     "align": "inside",
-                    "thickness": {
-                      "top": 1,
-                      "right": 1,
-                      "bottom": 1,
-                      "left": 2
-                    },
-                    "fill": "#E5E7EB"
+                    "thickness": 1,
+                    "fill": "$--gray-border"
                   },
                   "effect": {
                     "type": "shadow",
                     "shadowType": "outer",
-                    "color": "#00000014",
+                    "color": "#0F172A14",
                     "offset": {
                       "x": 0,
-                      "y": 6
+                      "y": 10
                     },
-                    "blur": 16
+                    "blur": 24
                   },
                   "layout": "vertical",
-                  "gap": 14,
-                  "padding": 14,
+                  "gap": 16,
+                  "padding": 16,
                   "children": [
                     {
                       "type": "frame",
                       "id": "351Ha",
                       "name": "vhSpecTop2G",
                       "width": "fill_container",
-                      "gap": 14,
+                      "gap": 16,
+                      "alignItems": "center",
                       "children": [
                         {
                           "type": "frame",
                           "id": "9VyKT",
                           "name": "vhSpecImg2G",
                           "width": 120,
-                          "height": 152,
+                          "height": 156,
                           "fill": {
                             "type": "image",
                             "enabled": true,
                             "url": "images/generated-1777246449158.png",
                             "mode": "fill"
                           },
-                          "cornerRadius": 8
+                          "cornerRadius": 12,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "$--gray-border"
+                          }
                         },
                         {
                           "type": "frame",
@@ -2022,38 +1880,30 @@
                           "name": "vhSpecInfo2G",
                           "width": "fill_container",
                           "layout": "vertical",
-                          "gap": 6,
+                          "gap": 8,
                           "justifyContent": "center",
                           "children": [
                             {
                               "type": "text",
                               "id": "1BfaY",
                               "name": "vhSpecName2G",
-                              "fill": "#111827",
+                              "fill": "$--text-dark",
                               "content": "Juliana Martins",
                               "fontFamily": "Manrope",
-                              "fontSize": 24,
+                              "fontSize": 26,
                               "fontWeight": "800"
                             },
                             {
                               "type": "text",
                               "id": "BOWgv",
                               "name": "vhSpecRole2G",
-                              "fill": "#4B5563",
-                              "content": "Especialista em Aplicações",
+                              "fill": "$--gray-text",
+                              "textGrowth": "fixed-width",
+                              "width": 205,
+                              "content": "Especialista em Aplicações Graneleiras e Tanques",
                               "fontFamily": "Manrope",
-                              "fontSize": 15,
-                              "fontWeight": "600"
-                            },
-                            {
-                              "type": "text",
-                              "id": "gMXAy",
-                              "name": "vhSpecLine2G",
-                              "fill": "#6B7280",
-                              "content": "Graneleiras e Tanques",
-                              "fontFamily": "Manrope",
-                              "fontSize": 15,
-                              "fontWeight": "600"
+                              "fontSize": 14,
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -2064,24 +1914,24 @@
                       "id": "rmtyu",
                       "name": "vhSpecActRow2G",
                       "width": "fill_container",
-                      "gap": 8,
+                      "gap": 10,
                       "children": [
                         {
                           "type": "frame",
                           "id": "G1ojz",
                           "name": "vhSpecWa2G",
                           "width": "fill_container",
-                          "fill": "#FFF5D4",
-                          "cornerRadius": 6,
+                          "fill": "$--yellow-primary",
+                          "cornerRadius": 10,
                           "stroke": {
                             "align": "inside",
                             "thickness": 1,
-                            "fill": "#F2E3A8"
+                            "fill": "$--yellow-hover"
                           },
                           "gap": 6,
                           "padding": [
-                            10,
-                            12
+                            11,
+                            14
                           ],
                           "alignItems": "center",
                           "children": [
@@ -2112,17 +1962,17 @@
                           "id": "tRXnG",
                           "name": "vhSpecMail2G",
                           "width": "fill_container",
-                          "fill": "#FFFFFF",
-                          "cornerRadius": 6,
+                          "fill": "$--white-soft",
+                          "cornerRadius": 10,
                           "stroke": {
                             "align": "inside",
                             "thickness": 1,
-                            "fill": "#E5E7EB"
+                            "fill": "$--gray-border"
                           },
                           "gap": 6,
                           "padding": [
-                            10,
-                            12
+                            11,
+                            14
                           ],
                           "alignItems": "center",
                           "children": [
@@ -2142,47 +1992,6 @@
                               "name": "vhSpecMailTx2G",
                               "fill": "#374151",
                               "content": "E-mail",
-                              "fontFamily": "Manrope",
-                              "fontSize": 13,
-                              "fontWeight": "700"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "JRbg6",
-                          "name": "vhSpecCall2G",
-                          "width": "fill_container",
-                          "fill": "#FFFFFF",
-                          "cornerRadius": 6,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#E5E7EB"
-                          },
-                          "gap": 6,
-                          "padding": [
-                            10,
-                            12
-                          ],
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "S2tyR",
-                              "name": "vhSpecCallIc2G",
-                              "width": 14,
-                              "height": 14,
-                              "iconFontName": "phone",
-                              "iconFontFamily": "lucide",
-                              "fill": "#374151"
-                            },
-                            {
-                              "type": "text",
-                              "id": "suSlZ",
-                              "name": "vhSpecCallTx2G",
-                              "fill": "#374151",
-                              "content": "Ligar",
                               "fontFamily": "Manrope",
                               "fontSize": 13,
                               "fontWeight": "700"
@@ -2212,11 +2021,8 @@
             "fill": "#E5E7EB"
           },
           "layout": "vertical",
-          "gap": 24,
-          "padding": [
-            28,
-            64
-          ],
+          "gap": 48,
+          "padding": 64,
           "children": [
             {
               "type": "frame",
@@ -2898,97 +2704,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "type": "frame",
-                  "id": "dFN8p",
-                  "name": "vhFootCol5J",
-                  "width": "fill_container",
-                  "layout": "vertical",
-                  "gap": 12,
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "zvJ7x",
-                      "name": "vhFootCol5TitleJ",
-                      "fill": "#FFFFFF",
-                      "content": "Receba novidades",
-                      "fontFamily": "Manrope",
-                      "fontSize": 17,
-                      "fontWeight": "800"
-                    },
-                    {
-                      "type": "text",
-                      "id": "zXhmb",
-                      "name": "vhFootCol5DescJ",
-                      "fill": "#D1D5DB",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "Cadastre-se e receba lançamentos e novidades da Vehoway.",
-                      "lineHeight": 1.4,
-                      "fontFamily": "Manrope",
-                      "fontSize": 15,
-                      "fontWeight": "500"
-                    },
-                    {
-                      "type": "frame",
-                      "id": "wXUBr",
-                      "name": "vhFootNewsRowJ",
-                      "width": "fill_container",
-                      "gap": 8,
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "1hKH3",
-                          "name": "vhFootNewsInputJ",
-                          "width": "fill_container",
-                          "fill": "#F3F4F6",
-                          "cornerRadius": 8,
-                          "padding": [
-                            12,
-                            14
-                          ],
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "PtDvw",
-                              "name": "vhFootNewsPlaceholderJ",
-                              "fill": "#6B7280",
-                              "content": "Seu melhor e-mail",
-                              "fontFamily": "Manrope",
-                              "fontSize": 14,
-                              "fontWeight": "500"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "ghHgL",
-                          "name": "vhFootNewsSendJ",
-                          "width": 44,
-                          "height": 44,
-                          "fill": "#F6C21F",
-                          "cornerRadius": 8,
-                          "layout": "vertical",
-                          "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "HQdCf",
-                              "name": "vhFootNewsSendIcJ",
-                              "width": 18,
-                              "height": 18,
-                              "iconFontName": "send",
-                              "iconFontFamily": "lucide",
-                              "fill": "#050505"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             },
@@ -3124,14 +2839,14 @@
           "children": [
             {
               "type": "frame",
-              "id": "EOtpF",
-              "name": "prodLogoWrap",
+              "id": "Wr76O",
+              "name": "vhLogoWrapA",
               "gap": 12,
               "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
-                  "id": "x6s07",
+                  "id": "aLQCY",
                   "name": "prodLogoSym",
                   "width": 42,
                   "height": 42,
@@ -3141,7 +2856,7 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "uUWak",
+                      "id": "AizGj",
                       "x": 11,
                       "y": 4,
                       "name": "prodLogoV",
@@ -3155,30 +2870,34 @@
                 },
                 {
                   "type": "frame",
-                  "id": "WNu85",
-                  "name": "prodLogoText",
+                  "id": "TiQff",
+                  "name": "vhLogoTextA",
                   "layout": "vertical",
                   "gap": 2,
                   "children": [
                     {
                       "type": "text",
-                      "id": "uxJR2",
-                      "name": "prodLogoName",
-                      "fill": "$--black-primary",
+                      "id": "KuYZA",
+                      "name": "vhLogoWordA",
+                      "fill": "#111827",
+                      "textGrowth": "fixed-width-height",
+                      "width": 147,
+                      "height": 34,
                       "content": "VEHOWAY",
                       "fontFamily": "Manrope",
-                      "fontSize": 20,
-                      "fontWeight": "900"
+                      "fontSize": 30,
+                      "fontWeight": "800"
                     },
                     {
                       "type": "text",
-                      "id": "w57QNi",
-                      "name": "prodLogoSub",
-                      "fill": "$--gray-text",
+                      "id": "IDyZg",
+                      "name": "vhLogoSubA",
+                      "fill": "#6B7280",
                       "content": "autopeças rodoviárias",
                       "fontFamily": "Manrope",
                       "fontSize": 11,
-                      "fontWeight": "700"
+                      "fontWeight": "600",
+                      "letterSpacing": 1.4
                     }
                   ]
                 }
@@ -3236,26 +2955,6 @@
                   "name": "prodNavCat",
                   "fill": "$--text-dark",
                   "content": "Catálogos",
-                  "fontFamily": "Manrope",
-                  "fontSize": 14,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "text",
-                  "id": "ilmE7",
-                  "name": "prodNavAssist",
-                  "fill": "$--text-dark",
-                  "content": "Assistência",
-                  "fontFamily": "Manrope",
-                  "fontSize": 14,
-                  "fontWeight": "600"
-                },
-                {
-                  "type": "text",
-                  "id": "ABGIw",
-                  "name": "prodNavContato",
-                  "fill": "$--text-dark",
-                  "content": "Contato",
                   "fontFamily": "Manrope",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -3709,209 +3408,6 @@
                       "fontWeight": "600"
                     }
                   ]
-                },
-                {
-                  "type": "frame",
-                  "id": "rczs7",
-                  "name": "prodSegments",
-                  "height": 54,
-                  "fill": "$--white",
-                  "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "$--gray-border"
-                  },
-                  "gap": 8,
-                  "padding": [
-                    6,
-                    8
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "z9gZy",
-                      "name": "prodSegAll",
-                      "height": 40,
-                      "fill": "$--black-primary",
-                      "cornerRadius": 8,
-                      "padding": [
-                        0,
-                        20
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "FPn3y",
-                          "name": "prodSegAllTxt",
-                          "fill": "$--white",
-                          "content": "Todos",
-                          "fontFamily": "Manrope",
-                          "fontSize": 13,
-                          "fontWeight": "800"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "fLN8C",
-                      "name": "prodSegSusp",
-                      "height": 40,
-                      "fill": "#F7F7F4",
-                      "cornerRadius": 8,
-                      "padding": [
-                        0,
-                        16
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "kSngI",
-                          "name": "prodSegSuspTxt",
-                          "fill": "$--text-dark",
-                          "content": "Porta",
-                          "fontFamily": "Manrope",
-                          "fontSize": 13,
-                          "fontWeight": "800"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "RZ3z7",
-                      "name": "prodSegEletrica",
-                      "height": 40,
-                      "fill": "#F7F7F4",
-                      "cornerRadius": 8,
-                      "padding": [
-                        0,
-                        16
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "i0z2i",
-                          "name": "prodSegEletricaTxt",
-                          "fill": "$--text-dark",
-                          "content": "Elétrica",
-                          "fontFamily": "Manrope",
-                          "fontSize": 13,
-                          "fontWeight": "800"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "i9ht4",
-                      "name": "prodSegFerragens",
-                      "height": 40,
-                      "fill": "#F7F7F4",
-                      "cornerRadius": 8,
-                      "padding": [
-                        0,
-                        16
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "vgtuR",
-                          "name": "prodSegFerragensTxt",
-                          "fill": "$--text-dark",
-                          "content": "Bau",
-                          "fontFamily": "Manrope",
-                          "fontSize": 13,
-                          "fontWeight": "800"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "kVh5u",
-                      "name": "prodSegVedacao",
-                      "height": 40,
-                      "fill": "#F7F7F4",
-                      "cornerRadius": 8,
-                      "padding": [
-                        0,
-                        16
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "BDW8B",
-                          "name": "prodSegVedacaoTxt",
-                          "fill": "$--text-dark",
-                          "content": "Carroceria",
-                          "fontFamily": "Manrope",
-                          "fontSize": 13,
-                          "fontWeight": "800"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "FgEqJ",
-                      "name": "prodSegVedacao",
-                      "height": 40,
-                      "fill": "#F7F7F4",
-                      "cornerRadius": 8,
-                      "padding": [
-                        0,
-                        16
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "T1mbu",
-                          "name": "prodSegVedacaoTxt",
-                          "fill": "$--text-dark",
-                          "content": "Graneleiro",
-                          "fontFamily": "Manrope",
-                          "fontSize": 13,
-                          "fontWeight": "800"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "Y0c9G8",
-                      "name": "prodSegVedacao",
-                      "height": 40,
-                      "fill": "#F7F7F4",
-                      "cornerRadius": 8,
-                      "padding": [
-                        0,
-                        16
-                      ],
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "buCVe",
-                          "name": "prodSegVedacaoTxt",
-                          "fill": "$--text-dark",
-                          "content": "Pneumatico",
-                          "fontFamily": "Manrope",
-                          "fontSize": 13,
-                          "fontWeight": "800"
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             },
@@ -3926,269 +3422,367 @@
                   "type": "frame",
                   "id": "kbkLj",
                   "name": "prodFilters",
-                  "width": 250,
+                  "width": 282,
                   "fill": "$--white",
-                  "cornerRadius": 10,
+                  "cornerRadius": 14,
                   "stroke": {
                     "align": "inside",
                     "thickness": 1,
-                    "fill": "$--gray-border"
+                    "fill": "#E5E7EB"
+                  },
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0F172A0A",
+                    "offset": {
+                      "x": 0,
+                      "y": 6
+                    },
+                    "blur": 18
                   },
                   "layout": "vertical",
-                  "gap": 18,
+                  "gap": 22,
                   "padding": 20,
                   "children": [
                     {
-                      "type": "text",
-                      "id": "X7qULJ",
-                      "name": "prodFilterTitle",
-                      "fill": "$--black-primary",
-                      "content": "Filtros",
-                      "fontFamily": "Manrope",
-                      "fontSize": 22,
-                      "fontWeight": "900"
-                    },
-                    {
-                      "type": "text",
-                      "id": "r9dVB2",
-                      "name": "prodFilterClean",
-                      "fill": "#8A6300",
-                      "content": "Limpar filtros  ×",
-                      "fontFamily": "Manrope",
-                      "fontSize": 13,
-                      "fontWeight": "800"
-                    },
-                    {
-                      "type": "rectangle",
-                      "id": "Z1Evb",
-                      "name": "prodFilterLine",
-                      "fill": "$--gray-border",
+                      "type": "frame",
+                      "id": "M1UveA",
+                      "name": "head",
                       "width": "fill_container",
-                      "height": 1
-                    },
-                    {
-                      "type": "text",
-                      "id": "zQpEr",
-                      "name": "prodFilterCatTitle",
-                      "fill": "$--black-primary",
-                      "content": "Categoria",
-                      "fontFamily": "Manrope",
-                      "fontSize": 14,
-                      "fontWeight": "900"
-                    },
-                    {
-                      "type": "frame",
-                      "id": "PGQms",
-                      "name": "prodFilter1",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 4,
-                          "id": "BOVzI",
-                          "name": "prodFilter1Box",
-                          "fill": "$--yellow-primary",
-                          "width": 16,
-                          "height": 16,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#D6A40F"
-                          }
-                        },
-                        {
-                          "type": "text",
-                          "id": "jREus",
-                          "name": "prodFilter1Txt",
-                          "fill": "$--text-dark",
-                          "content": "Bau",
-                          "fontFamily": "Manrope",
-                          "fontSize": 14,
-                          "fontWeight": "700"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "BsiQd",
-                      "name": "prodFilter2",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 4,
-                          "id": "lE0Qd",
-                          "name": "prodFilter2Box",
-                          "fill": "$--white",
-                          "width": 16,
-                          "height": 16,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$--gray-border"
-                          }
-                        },
-                        {
-                          "type": "text",
-                          "id": "JGX6l",
-                          "name": "prodFilter2Txt",
-                          "fill": "$--gray-text",
-                          "content": "Pneumática",
-                          "fontFamily": "Manrope",
-                          "fontSize": 14,
-                          "fontWeight": "700"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "zEalO",
-                      "name": "prodFilter3",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 4,
-                          "id": "J0P5SA",
-                          "name": "prodFilter3Box",
-                          "fill": "$--white",
-                          "width": 16,
-                          "height": 16,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$--gray-border"
-                          }
-                        },
-                        {
-                          "type": "text",
-                          "id": "XRuJ0",
-                          "name": "prodFilter3Txt",
-                          "fill": "$--gray-text",
-                          "content": "Graneleiro",
-                          "fontFamily": "Manrope",
-                          "fontSize": 14,
-                          "fontWeight": "700"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "jLO2q",
-                      "name": "prodFilter3",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 4,
-                          "id": "lHc7t",
-                          "name": "prodFilter3Box",
-                          "fill": "$--white",
-                          "width": 16,
-                          "height": 16,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$--gray-border"
-                          }
-                        },
-                        {
-                          "type": "text",
-                          "id": "x2fHP",
-                          "name": "prodFilter3Txt",
-                          "fill": "$--gray-text",
-                          "content": "Carroceria",
-                          "fontFamily": "Manrope",
-                          "fontSize": 14,
-                          "fontWeight": "700"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "Y5kCEv",
-                      "name": "prodFilter3",
-                      "gap": 10,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "rectangle",
-                          "cornerRadius": 4,
-                          "id": "Lvn23",
-                          "name": "prodFilter3Box",
-                          "fill": "$--white",
-                          "width": 16,
-                          "height": 16,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$--gray-border"
-                          }
-                        },
-                        {
-                          "type": "text",
-                          "id": "hkbVu",
-                          "name": "prodFilter3Txt",
-                          "fill": "$--gray-text",
-                          "content": "Porta",
-                          "fontFamily": "Manrope",
-                          "fontSize": 14,
-                          "fontWeight": "700"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "id": "DKS6C",
-                      "name": "prodFilterAppTitle",
-                      "fill": "$--black-primary",
-                      "content": "Aplicação",
-                      "fontFamily": "Manrope",
-                      "fontSize": 14,
-                      "fontWeight": "900"
-                    },
-                    {
-                      "type": "frame",
-                      "id": "iR3u3",
-                      "name": "prodFilterApp1",
-                      "width": "fill_container",
-                      "fill": "#F7F7F4",
-                      "cornerRadius": 8,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "$--gray-border"
-                      },
-                      "padding": [
-                        11,
-                        12
-                      ],
                       "justifyContent": "space_between",
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
-                          "id": "KzZmp",
-                          "name": "prodFilterApp1Txt",
-                          "fill": "$--text-dark",
-                          "content": "Semirreboque",
+                          "id": "JSbIM",
+                          "name": "headTitle",
+                          "fill": "$--black-primary",
+                          "content": "Filtros",
                           "fontFamily": "Manrope",
-                          "fontSize": 13,
-                          "fontWeight": "700"
+                          "fontSize": 22,
+                          "fontWeight": "900"
                         },
                         {
-                          "type": "icon_font",
-                          "id": "UIvj3",
-                          "name": "prodFilterApp1Icon",
-                          "width": 15,
-                          "height": 15,
-                          "iconFontName": "chevron-down",
-                          "iconFontFamily": "lucide",
-                          "fill": "$--gray-text"
+                          "type": "frame",
+                          "id": "Tx5gT",
+                          "name": "headAction",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "eqMlV",
+                              "name": "headActionText",
+                              "fill": "#8A6300",
+                              "content": "Limpar filtros",
+                              "fontFamily": "Manrope",
+                              "fontSize": 13,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "awwLo",
+                              "name": "headActionIcon",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "rotate-cw",
+                              "iconFontFamily": "lucide",
+                              "fill": "#8A6300"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gB0I9",
+                      "name": "field1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wFias",
+                          "name": "field1Label",
+                          "fill": "$--black-primary",
+                          "content": "Categoria",
+                          "fontFamily": "Manrope",
+                          "fontSize": 14,
+                          "fontWeight": "900"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "U9Foe",
+                          "name": "field1Input",
+                          "width": "fill_container",
+                          "fill": "$--white",
+                          "cornerRadius": 10,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            12,
+                            14
+                          ],
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Cbzkw",
+                              "name": "field1Placeholder",
+                              "fill": "#D1D5DB",
+                              "content": "Selecione a categoria",
+                              "fontFamily": "Manrope",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "Dceb7",
+                              "name": "field1Icon",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "chevron-down",
+                              "iconFontFamily": "lucide",
+                              "fill": "#4B5563"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xCox1",
+                      "name": "field2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "sQkXw",
+                          "name": "field2Label",
+                          "fill": "$--black-primary",
+                          "content": "Aplicação",
+                          "fontFamily": "Manrope",
+                          "fontSize": 14,
+                          "fontWeight": "900"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QHPAJ",
+                          "name": "field2Input",
+                          "width": "fill_container",
+                          "fill": "$--white",
+                          "cornerRadius": 10,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            12,
+                            14
+                          ],
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "K9im4",
+                              "name": "field2Placeholder",
+                              "fill": "#D1D5DB",
+                              "content": "Selecione a aplicação",
+                              "fontFamily": "Manrope",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "aiOcC",
+                              "name": "field2Icon",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "chevron-down",
+                              "iconFontFamily": "lucide",
+                              "fill": "#4B5563"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EFvAK",
+                      "name": "field3",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oWMD5",
+                          "name": "field3Label",
+                          "fill": "$--black-primary",
+                          "content": "Catálogo",
+                          "fontFamily": "Manrope",
+                          "fontSize": 14,
+                          "fontWeight": "900"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "rFezm",
+                          "name": "field3Input",
+                          "width": "fill_container",
+                          "fill": "$--white",
+                          "cornerRadius": 10,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            12,
+                            14
+                          ],
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "mPnxp",
+                              "name": "field3Placeholder",
+                              "fill": "#D1D5DB",
+                              "content": "Selecione o catálogo",
+                              "fontFamily": "Manrope",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "bjTMo",
+                              "name": "field3Icon",
+                              "width": 16,
+                              "height": 16,
+                              "iconFontName": "chevron-down",
+                              "iconFontFamily": "lucide",
+                              "fill": "#4B5563"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "H5RbE",
+                      "name": "activeBox",
+                      "width": "fill_container",
+                      "fill": "#FFF9E8",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#F4E3A8"
+                      },
+                      "layout": "vertical",
+                      "gap": 14,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Vx39K",
+                          "name": "activeTitle",
+                          "fill": "$--black-primary",
+                          "content": "Filtros ativos",
+                          "fontFamily": "Manrope",
+                          "fontSize": 14,
+                          "fontWeight": "900"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Jh4y2",
+                          "name": "tag1",
+                          "width": "fill_container",
+                          "fill": "$--white",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            10,
+                            12
+                          ],
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Ub2m7",
+                              "name": "tag1Text",
+                              "fill": "#6B7280",
+                              "content": "Categoria: Ferragens",
+                              "fontFamily": "Manrope",
+                              "fontSize": 13,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "ctUHD",
+                              "name": "tag1Icon",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "x",
+                              "iconFontFamily": "lucide",
+                              "fill": "#8A6300"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "MBcFQ",
+                          "name": "tag2",
+                          "width": "fill_container",
+                          "fill": "$--white",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E5E7EB"
+                          },
+                          "padding": [
+                            10,
+                            12
+                          ],
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "NNbU4",
+                              "name": "tag2Text",
+                              "fill": "#6B7280",
+                              "content": "Aplicação: Carreta Sider",
+                              "fontFamily": "Manrope",
+                              "fontSize": 13,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "hb8it",
+                              "name": "tag2Icon",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "x",
+                              "iconFontFamily": "lucide",
+                              "fill": "#8A6300"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -4219,46 +3813,6 @@
                           "fontFamily": "Manrope",
                           "fontSize": 26,
                           "fontWeight": "900"
-                        },
-                        {
-                          "type": "frame",
-                          "id": "mx5kZ",
-                          "name": "prodSort",
-                          "fill": "$--white",
-                          "cornerRadius": 8,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "$--gray-border"
-                          },
-                          "gap": 8,
-                          "padding": [
-                            10,
-                            12
-                          ],
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "PyWCZ",
-                              "name": "prodSortTxt",
-                              "fill": "$--text-dark",
-                              "content": "Mais procuradas",
-                              "fontFamily": "Manrope",
-                              "fontSize": 13,
-                              "fontWeight": "800"
-                            },
-                            {
-                              "type": "icon_font",
-                              "id": "oPmOo",
-                              "name": "prodSortIcon",
-                              "width": 15,
-                              "height": 15,
-                              "iconFontName": "chevron-down",
-                              "iconFontFamily": "lucide",
-                              "fill": "$--gray-text"
-                            }
-                          ]
                         }
                       ]
                     },
@@ -4352,40 +3906,10 @@
                                           "id": "sBQfC",
                                           "name": "prodCard1Code",
                                           "fill": "$--gray-text",
-                                          "content": "Cod. VH-1042 • linha pesada",
+                                          "content": "Cod. VH-1042",
                                           "fontFamily": "Manrope",
                                           "fontSize": 12,
                                           "fontWeight": "700"
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "kRVyV",
-                                          "name": "prodCard1Actions",
-                                          "width": "fill_container",
-                                          "justifyContent": "space_between",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "siqd3",
-                                              "name": "prodCard1Link",
-                                              "fill": "#8A6300",
-                                              "content": "Ver detalhes",
-                                              "fontFamily": "Manrope",
-                                              "fontSize": 13,
-                                              "fontWeight": "900"
-                                            },
-                                            {
-                                              "type": "icon_font",
-                                              "id": "MDPQF",
-                                              "name": "prodCard1Icon",
-                                              "width": 17,
-                                              "height": 17,
-                                              "iconFontName": "message-circle",
-                                              "iconFontFamily": "lucide",
-                                              "fill": "#16A34A"
-                                            }
-                                          ]
                                         },
                                         {
                                           "type": "text",
@@ -4429,12 +3953,12 @@
                                                   "type": "frame",
                                                   "id": "O8S01x",
                                                   "name": "prodCard1App1",
-                                                  "fill": "#FFF9E8",
+                                                  "fill": "#F7F7F4",
                                                   "cornerRadius": 999,
                                                   "stroke": {
                                                     "align": "inside",
                                                     "thickness": 1,
-                                                    "fill": "#F4E3A8"
+                                                    "fill": "$--gray-border"
                                                   },
                                                   "padding": [
                                                     5,
@@ -4445,7 +3969,7 @@
                                                       "type": "text",
                                                       "id": "JqMiK",
                                                       "name": "prodCard1App1Txt",
-                                                      "fill": "#8A6300",
+                                                      "fill": "$--gray-text",
                                                       "content": "Baú",
                                                       "fontFamily": "Manrope",
                                                       "fontSize": 10,
@@ -4482,6 +4006,52 @@
                                                   ]
                                                 }
                                               ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "HkagW",
+                                          "name": "prodCard3Actions",
+                                          "width": "fill_container",
+                                          "stroke": {
+                                            "align": "inside",
+                                            "thickness": {
+                                              "top": 1
+                                            },
+                                            "fill": "$u:--border"
+                                          },
+                                          "padding": [
+                                            8,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "v3bHM",
+                                              "name": "prodCard3Link",
+                                              "fill": "#8A6300",
+                                              "content": "Ver detalhes",
+                                              "fontFamily": "Manrope",
+                                              "fontSize": 13,
+                                              "fontWeight": "900"
+                                            },
+                                            {
+                                              "type": "rectangle",
+                                              "id": "GcfQD",
+                                              "name": "icon1",
+                                              "fill": {
+                                                "type": "image",
+                                                "enabled": true,
+                                                "url": "image-1.png",
+                                                "mode": "fill"
+                                              },
+                                              "width": 24,
+                                              "height": 24
                                             }
                                           ]
                                         }
@@ -4557,40 +4127,10 @@
                                           "id": "lM5bA",
                                           "name": "prodCard2Code",
                                           "fill": "$--gray-text",
-                                          "content": "Cod. VH-2180 • carroceria",
+                                          "content": "Cod. VH-2180",
                                           "fontFamily": "Manrope",
                                           "fontSize": 12,
                                           "fontWeight": "700"
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "P9g0PS",
-                                          "name": "prodCard2Actions",
-                                          "width": "fill_container",
-                                          "justifyContent": "space_between",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "fBDtE",
-                                              "name": "prodCard2Link",
-                                              "fill": "#8A6300",
-                                              "content": "Ver detalhes",
-                                              "fontFamily": "Manrope",
-                                              "fontSize": 13,
-                                              "fontWeight": "900"
-                                            },
-                                            {
-                                              "type": "icon_font",
-                                              "id": "Sff70",
-                                              "name": "prodCard2Icon",
-                                              "width": 17,
-                                              "height": 17,
-                                              "iconFontName": "message-circle",
-                                              "iconFontFamily": "lucide",
-                                              "fill": "#16A34A"
-                                            }
-                                          ]
                                         },
                                         {
                                           "type": "text",
@@ -4634,12 +4174,12 @@
                                                   "type": "frame",
                                                   "id": "W2aKkJ",
                                                   "name": "prodCard2App1",
-                                                  "fill": "#FFF9E8",
+                                                  "fill": "#F7F7F4",
                                                   "cornerRadius": 999,
                                                   "stroke": {
                                                     "align": "inside",
                                                     "thickness": 1,
-                                                    "fill": "#F4E3A8"
+                                                    "fill": "$--gray-border"
                                                   },
                                                   "padding": [
                                                     5,
@@ -4650,7 +4190,7 @@
                                                       "type": "text",
                                                       "id": "oADbe",
                                                       "name": "prodCard2App1Txt",
-                                                      "fill": "#8A6300",
+                                                      "fill": "$--gray-text",
                                                       "content": "Porta",
                                                       "fontFamily": "Manrope",
                                                       "fontSize": 10,
@@ -4687,6 +4227,52 @@
                                                   ]
                                                 }
                                               ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "WvEmA",
+                                          "name": "prodCard3Actions",
+                                          "width": "fill_container",
+                                          "stroke": {
+                                            "align": "inside",
+                                            "thickness": {
+                                              "top": 1
+                                            },
+                                            "fill": "$u:--border"
+                                          },
+                                          "padding": [
+                                            8,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "ABkZF",
+                                              "name": "prodCard3Link",
+                                              "fill": "#8A6300",
+                                              "content": "Ver detalhes",
+                                              "fontFamily": "Manrope",
+                                              "fontSize": 13,
+                                              "fontWeight": "900"
+                                            },
+                                            {
+                                              "type": "rectangle",
+                                              "id": "LhHBt",
+                                              "name": "icon1",
+                                              "fill": {
+                                                "type": "image",
+                                                "enabled": true,
+                                                "url": "image-1.png",
+                                                "mode": "fill"
+                                              },
+                                              "width": 24,
+                                              "height": 24
                                             }
                                           ]
                                         }
@@ -4762,40 +4348,10 @@
                                           "id": "AimDd",
                                           "name": "prodCard3Code",
                                           "fill": "$--gray-text",
-                                          "content": "Cod. VH-3327 • suspensão",
+                                          "content": "Cod. VH-3327",
                                           "fontFamily": "Manrope",
                                           "fontSize": 12,
                                           "fontWeight": "700"
-                                        },
-                                        {
-                                          "type": "frame",
-                                          "id": "y1hW6",
-                                          "name": "prodCard3Actions",
-                                          "width": "fill_container",
-                                          "justifyContent": "space_between",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "YsH8j",
-                                              "name": "prodCard3Link",
-                                              "fill": "#8A6300",
-                                              "content": "Ver detalhes",
-                                              "fontFamily": "Manrope",
-                                              "fontSize": 13,
-                                              "fontWeight": "900"
-                                            },
-                                            {
-                                              "type": "icon_font",
-                                              "id": "truCn",
-                                              "name": "prodCard3Icon",
-                                              "width": 17,
-                                              "height": 17,
-                                              "iconFontName": "message-circle",
-                                              "iconFontFamily": "lucide",
-                                              "fill": "#16A34A"
-                                            }
-                                          ]
                                         },
                                         {
                                           "type": "text",
@@ -4839,12 +4395,12 @@
                                                   "type": "frame",
                                                   "id": "V7osP",
                                                   "name": "prodCard3App1",
-                                                  "fill": "#FFF9E8",
+                                                  "fill": "#F7F7F4",
                                                   "cornerRadius": 999,
                                                   "stroke": {
                                                     "align": "inside",
                                                     "thickness": 1,
-                                                    "fill": "#F4E3A8"
+                                                    "fill": "$--gray-border"
                                                   },
                                                   "padding": [
                                                     5,
@@ -4855,7 +4411,7 @@
                                                       "type": "text",
                                                       "id": "Tq98I",
                                                       "name": "prodCard3App1Txt",
-                                                      "fill": "#8A6300",
+                                                      "fill": "$--gray-text",
                                                       "content": "Eixo",
                                                       "fontFamily": "Manrope",
                                                       "fontSize": 10,
@@ -4892,6 +4448,52 @@
                                                   ]
                                                 }
                                               ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "y1hW6",
+                                          "name": "prodCard3Actions",
+                                          "width": "fill_container",
+                                          "stroke": {
+                                            "align": "inside",
+                                            "thickness": {
+                                              "top": 1
+                                            },
+                                            "fill": "$u:--border"
+                                          },
+                                          "padding": [
+                                            8,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "YsH8j",
+                                              "name": "prodCard3Link",
+                                              "fill": "#8A6300",
+                                              "content": "Ver detalhes",
+                                              "fontFamily": "Manrope",
+                                              "fontSize": 13,
+                                              "fontWeight": "900"
+                                            },
+                                            {
+                                              "type": "rectangle",
+                                              "id": "XH7OY",
+                                              "name": "icon2",
+                                              "fill": {
+                                                "type": "image",
+                                                "enabled": true,
+                                                "url": "image-1.png",
+                                                "mode": "fill"
+                                              },
+                                              "width": 24,
+                                              "height": 24
                                             }
                                           ]
                                         }
@@ -4982,36 +4584,6 @@
                                           "fontWeight": "700"
                                         },
                                         {
-                                          "type": "frame",
-                                          "id": "k4WUnn",
-                                          "name": "prodCard4Actions",
-                                          "width": "fill_container",
-                                          "justifyContent": "space_between",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "bBmuQ",
-                                              "name": "prodCard4Link",
-                                              "fill": "#8A6300",
-                                              "content": "Ver detalhes",
-                                              "fontFamily": "Manrope",
-                                              "fontSize": 13,
-                                              "fontWeight": "900"
-                                            },
-                                            {
-                                              "type": "icon_font",
-                                              "id": "Fnhx7",
-                                              "name": "prodCard4Icon",
-                                              "width": 17,
-                                              "height": 17,
-                                              "iconFontName": "message-circle",
-                                              "iconFontFamily": "lucide",
-                                              "fill": "#16A34A"
-                                            }
-                                          ]
-                                        },
-                                        {
                                           "type": "text",
                                           "id": "p08XHG",
                                           "name": "prodCard4Desc",
@@ -5053,12 +4625,12 @@
                                                   "type": "frame",
                                                   "id": "cQx3B",
                                                   "name": "prodCard4App1",
-                                                  "fill": "#FFF9E8",
+                                                  "fill": "#F7F7F4",
                                                   "cornerRadius": 999,
                                                   "stroke": {
                                                     "align": "inside",
                                                     "thickness": 1,
-                                                    "fill": "#F4E3A8"
+                                                    "fill": "$--gray-border"
                                                   },
                                                   "padding": [
                                                     5,
@@ -5069,7 +4641,7 @@
                                                       "type": "text",
                                                       "id": "Yjnc1",
                                                       "name": "prodCard4App1Txt",
-                                                      "fill": "#8A6300",
+                                                      "fill": "$--gray-text",
                                                       "content": "Caminhão",
                                                       "fontFamily": "Manrope",
                                                       "fontSize": 10,
@@ -5106,6 +4678,52 @@
                                                   ]
                                                 }
                                               ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "D9ayZq",
+                                          "name": "prodCard3Actions",
+                                          "width": "fill_container",
+                                          "stroke": {
+                                            "align": "inside",
+                                            "thickness": {
+                                              "top": 1
+                                            },
+                                            "fill": "$u:--border"
+                                          },
+                                          "padding": [
+                                            8,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "fySxN",
+                                              "name": "prodCard3Link",
+                                              "fill": "#8A6300",
+                                              "content": "Ver detalhes",
+                                              "fontFamily": "Manrope",
+                                              "fontSize": 13,
+                                              "fontWeight": "900"
+                                            },
+                                            {
+                                              "type": "rectangle",
+                                              "id": "vDn34",
+                                              "name": "icon3",
+                                              "fill": {
+                                                "type": "image",
+                                                "enabled": true,
+                                                "url": "image-1.png",
+                                                "mode": "fill"
+                                              },
+                                              "width": 24,
+                                              "height": 24
                                             }
                                           ]
                                         }
@@ -5187,36 +4805,6 @@
                                           "fontWeight": "700"
                                         },
                                         {
-                                          "type": "frame",
-                                          "id": "f9JAtW",
-                                          "name": "prodCard5Actions",
-                                          "width": "fill_container",
-                                          "justifyContent": "space_between",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "k3AYfW",
-                                              "name": "prodCard5Link",
-                                              "fill": "#8A6300",
-                                              "content": "Ver detalhes",
-                                              "fontFamily": "Manrope",
-                                              "fontSize": 13,
-                                              "fontWeight": "900"
-                                            },
-                                            {
-                                              "type": "icon_font",
-                                              "id": "Bdb9B",
-                                              "name": "prodCard5Icon",
-                                              "width": 17,
-                                              "height": 17,
-                                              "iconFontName": "message-circle",
-                                              "iconFontFamily": "lucide",
-                                              "fill": "#16A34A"
-                                            }
-                                          ]
-                                        },
-                                        {
                                           "type": "text",
                                           "id": "BUowa",
                                           "name": "prodCard5Desc",
@@ -5258,12 +4846,12 @@
                                                   "type": "frame",
                                                   "id": "EvdOb",
                                                   "name": "prodCard5App1",
-                                                  "fill": "#FFF9E8",
+                                                  "fill": "#F7F7F4",
                                                   "cornerRadius": 999,
                                                   "stroke": {
                                                     "align": "inside",
                                                     "thickness": 1,
-                                                    "fill": "#F4E3A8"
+                                                    "fill": "$--gray-border"
                                                   },
                                                   "padding": [
                                                     5,
@@ -5274,7 +4862,7 @@
                                                       "type": "text",
                                                       "id": "x5Fyc0",
                                                       "name": "prodCard5App1Txt",
-                                                      "fill": "#8A6300",
+                                                      "fill": "$--gray-text",
                                                       "content": "Elétrica",
                                                       "fontFamily": "Manrope",
                                                       "fontSize": 10,
@@ -5311,6 +4899,52 @@
                                                   ]
                                                 }
                                               ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "G7UQlQ",
+                                          "name": "prodCard3Actions",
+                                          "width": "fill_container",
+                                          "stroke": {
+                                            "align": "inside",
+                                            "thickness": {
+                                              "top": 1
+                                            },
+                                            "fill": "$u:--border"
+                                          },
+                                          "padding": [
+                                            8,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "cYFCp",
+                                              "name": "prodCard3Link",
+                                              "fill": "#8A6300",
+                                              "content": "Ver detalhes",
+                                              "fontFamily": "Manrope",
+                                              "fontSize": 13,
+                                              "fontWeight": "900"
+                                            },
+                                            {
+                                              "type": "rectangle",
+                                              "id": "MTrrQ",
+                                              "name": "icon4",
+                                              "fill": {
+                                                "type": "image",
+                                                "enabled": true,
+                                                "url": "image-1.png",
+                                                "mode": "fill"
+                                              },
+                                              "width": 24,
+                                              "height": 24
                                             }
                                           ]
                                         }
@@ -5392,36 +5026,6 @@
                                           "fontWeight": "700"
                                         },
                                         {
-                                          "type": "frame",
-                                          "id": "XVCR1",
-                                          "name": "prodCard6Actions",
-                                          "width": "fill_container",
-                                          "justifyContent": "space_between",
-                                          "alignItems": "center",
-                                          "children": [
-                                            {
-                                              "type": "text",
-                                              "id": "l0SBpT",
-                                              "name": "prodCard6Link",
-                                              "fill": "#8A6300",
-                                              "content": "Ver detalhes",
-                                              "fontFamily": "Manrope",
-                                              "fontSize": 13,
-                                              "fontWeight": "900"
-                                            },
-                                            {
-                                              "type": "icon_font",
-                                              "id": "u6jDp8",
-                                              "name": "prodCard6Icon",
-                                              "width": 17,
-                                              "height": 17,
-                                              "iconFontName": "message-circle",
-                                              "iconFontFamily": "lucide",
-                                              "fill": "#16A34A"
-                                            }
-                                          ]
-                                        },
-                                        {
                                           "type": "text",
                                           "id": "L9Fi3",
                                           "name": "prodCard6Desc",
@@ -5463,12 +5067,12 @@
                                                   "type": "frame",
                                                   "id": "Y4uFv",
                                                   "name": "prodCard6App1",
-                                                  "fill": "#FFF9E8",
+                                                  "fill": "#F7F7F4",
                                                   "cornerRadius": 999,
                                                   "stroke": {
                                                     "align": "inside",
                                                     "thickness": 1,
-                                                    "fill": "#F4E3A8"
+                                                    "fill": "$--gray-border"
                                                   },
                                                   "padding": [
                                                     5,
@@ -5479,7 +5083,7 @@
                                                       "type": "text",
                                                       "id": "yCuHS",
                                                       "name": "prodCard6App1Txt",
-                                                      "fill": "#8A6300",
+                                                      "fill": "$--gray-text",
                                                       "content": "Manutenção",
                                                       "fontFamily": "Manrope",
                                                       "fontSize": 10,
@@ -5518,6 +5122,52 @@
                                               ]
                                             }
                                           ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "TJ95P",
+                                          "name": "prodCard3Actions",
+                                          "width": "fill_container",
+                                          "stroke": {
+                                            "align": "inside",
+                                            "thickness": {
+                                              "top": 1
+                                            },
+                                            "fill": "$u:--border"
+                                          },
+                                          "padding": [
+                                            8,
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "bbJ2I",
+                                              "name": "prodCard3Link",
+                                              "fill": "#8A6300",
+                                              "content": "Ver detalhes",
+                                              "fontFamily": "Manrope",
+                                              "fontSize": 13,
+                                              "fontWeight": "900"
+                                            },
+                                            {
+                                              "type": "rectangle",
+                                              "id": "yP5vK",
+                                              "name": "icon5",
+                                              "fill": {
+                                                "type": "image",
+                                                "enabled": true,
+                                                "url": "image-1.png",
+                                                "mode": "fill"
+                                              },
+                                              "width": 24,
+                                              "height": 24
+                                            }
+                                          ]
                                         }
                                       ]
                                     }
@@ -5533,101 +5183,121 @@
                           "name": "prodDetailPanel",
                           "width": 336,
                           "fill": "$--white",
-                          "cornerRadius": 12,
+                          "cornerRadius": 14,
                           "stroke": {
                             "align": "inside",
                             "thickness": 1,
-                            "fill": "#E6D39A"
+                            "fill": "#E5E7EB"
                           },
                           "effect": {
                             "type": "shadow",
                             "shadowType": "outer",
-                            "color": "#00000018",
+                            "color": "#0F172A12",
                             "offset": {
                               "x": 0,
-                              "y": 12
+                              "y": 8
                             },
-                            "blur": 24
+                            "blur": 22
                           },
                           "layout": "vertical",
-                          "gap": 16,
-                          "padding": 18,
+                          "gap": 20,
+                          "padding": 22,
                           "children": [
                             {
                               "type": "frame",
-                              "id": "T5nit",
-                              "name": "prodDetailBadge",
-                              "fill": "#FFF9E8",
-                              "cornerRadius": 999,
-                              "stroke": {
-                                "align": "inside",
-                                "thickness": 1,
-                                "fill": "#F4E3A8"
-                              },
-                              "gap": 8,
-                              "padding": [
-                                8,
-                                12
-                              ],
+                              "id": "zLd08",
+                              "name": "headRow",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "icon_font",
-                                  "id": "paecf",
-                                  "name": "prodDetailBadgeIcon",
-                                  "width": 15,
-                                  "height": 15,
-                                  "iconFontName": "sparkles",
-                                  "iconFontFamily": "lucide",
-                                  "fill": "$--yellow-primary"
+                                  "type": "text",
+                                  "id": "e6wOIr",
+                                  "name": "headText",
+                                  "fill": "$--black-primary",
+                                  "content": "Dobradiça inox",
+                                  "fontFamily": "Manrope",
+                                  "fontSize": 22,
+                                  "fontWeight": "900"
                                 },
                                 {
-                                  "type": "text",
-                                  "id": "Krif2",
-                                  "name": "prodDetailBadgeTxt",
-                                  "fill": "#8A6300",
-                                  "content": "Peça destaque",
-                                  "fontFamily": "Manrope",
-                                  "fontSize": 12,
-                                  "fontWeight": "900"
+                                  "type": "icon_font",
+                                  "id": "cHQ1G",
+                                  "name": "closeIcon",
+                                  "width": 18,
+                                  "height": 18,
+                                  "iconFontName": "x",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "#C9CDD3"
                                 }
                               ]
                             },
                             {
                               "type": "frame",
-                              "id": "Ntua0",
-                              "name": "prodDetailImg",
+                              "id": "SD5lO",
+                              "name": "metaRow",
                               "width": "fill_container",
-                              "height": 210,
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "gVE3T",
+                                  "name": "codeText",
+                                  "fill": "#9CA3AF",
+                                  "content": "Cód. PR-1127",
+                                  "fontFamily": "Manrope",
+                                  "fontSize": 14,
+                                  "fontWeight": "800"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Q5gkX",
+                                  "name": "stockBadge",
+                                  "fill": "#E8F9EE",
+                                  "cornerRadius": 999,
+                                  "padding": [
+                                    5,
+                                    10
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "J3ERYJ",
+                                      "name": "stockText",
+                                      "fill": "#3FAE68",
+                                      "content": "Em estoque",
+                                      "fontFamily": "Manrope",
+                                      "fontSize": 12,
+                                      "fontWeight": "900"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "q2AQg",
+                              "name": "heroImg",
+                              "width": "fill_container",
+                              "height": 170,
                               "fill": {
                                 "type": "image",
                                 "enabled": true,
-                                "url": "images/generated-1777246845519.png",
+                                "url": "./images/generated-1777415607511.png",
                                 "mode": "fill"
-                              },
-                              "cornerRadius": 10
+                              }
                             },
                             {
                               "type": "text",
-                              "id": "g84y1R",
-                              "name": "prodDetailTitle",
-                              "fill": "$--black-primary",
+                              "id": "GbWWr",
+                              "name": "descText",
+                              "fill": "#6B7280",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "Kit técnico para implementos",
-                              "lineHeight": 1.12,
-                              "fontFamily": "Manrope",
-                              "fontSize": 24,
-                              "fontWeight": "900"
-                            },
-                            {
-                              "type": "text",
-                              "id": "v5abrJ",
-                              "name": "prodDetailDesc",
-                              "fill": "$--gray-text",
-                              "textGrowth": "fixed-width",
-                              "width": "fill_container",
-                              "content": "Peça de alta procura para manutenção e reposição. Ideal para atendimento rápido com conferência por aplicação.",
+                              "content": "Dobradiça em aço inox 304, desenvolvida para aplicações que exigem alta resistência à corrosão e longa vida útil. Ideal para portas de baús e compartimentos diversos.",
                               "lineHeight": 1.45,
                               "fontFamily": "Manrope",
                               "fontSize": 14,
@@ -5635,81 +5305,109 @@
                             },
                             {
                               "type": "frame",
-                              "id": "eL4pl",
-                              "name": "prodDetailSpecs",
+                              "id": "m3QEZ",
+                              "name": "appsSection",
                               "width": "fill_container",
                               "layout": "vertical",
-                              "gap": 8,
+                              "gap": 10,
                               "children": [
                                 {
+                                  "type": "text",
+                                  "id": "XBlRf",
+                                  "name": "appsTitle",
+                                  "fill": "$--black-primary",
+                                  "content": "Aplicações",
+                                  "fontFamily": "Manrope",
+                                  "fontSize": 14,
+                                  "fontWeight": "900"
+                                },
+                                {
                                   "type": "frame",
-                                  "id": "b9xge",
-                                  "name": "prodSpec1",
+                                  "id": "Q4gjIc",
+                                  "name": "app1",
                                   "width": "fill_container",
-                                  "fill": "#F7F7F4",
-                                  "cornerRadius": 8,
-                                  "padding": [
-                                    10,
-                                    12
-                                  ],
-                                  "justifyContent": "space_between",
+                                  "gap": 8,
                                   "alignItems": "center",
                                   "children": [
                                     {
-                                      "type": "text",
-                                      "id": "ILKCL",
-                                      "name": "prodSpec1A",
-                                      "fill": "$--gray-text",
-                                      "content": "Código",
-                                      "fontFamily": "Manrope",
-                                      "fontSize": 12,
-                                      "fontWeight": "800"
+                                      "type": "icon_font",
+                                      "id": "z4rDI",
+                                      "name": "app1i",
+                                      "width": 14,
+                                      "height": 14,
+                                      "iconFontName": "check",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "#22C55E"
                                     },
                                     {
                                       "type": "text",
-                                      "id": "YTIHu",
-                                      "name": "prodSpec1B",
-                                      "fill": "$--black-primary",
-                                      "content": "VH-KIT",
+                                      "id": "eMhqf",
+                                      "name": "app1t",
+                                      "fill": "#4B5563",
+                                      "content": "Carreta Baú",
                                       "fontFamily": "Manrope",
-                                      "fontSize": 12,
-                                      "fontWeight": "900"
+                                      "fontSize": 14,
+                                      "fontWeight": "700"
                                     }
                                   ]
                                 },
                                 {
                                   "type": "frame",
-                                  "id": "qoE3T",
-                                  "name": "prodSpec2",
+                                  "id": "E2MLi",
+                                  "name": "app2",
                                   "width": "fill_container",
-                                  "fill": "#F7F7F4",
-                                  "cornerRadius": 8,
-                                  "padding": [
-                                    10,
-                                    12
-                                  ],
-                                  "justifyContent": "space_between",
+                                  "gap": 8,
                                   "alignItems": "center",
                                   "children": [
                                     {
-                                      "type": "text",
-                                      "id": "Ej0BL",
-                                      "name": "prodSpec2A",
-                                      "fill": "$--gray-text",
-                                      "content": "Aplicação",
-                                      "fontFamily": "Manrope",
-                                      "fontSize": 12,
-                                      "fontWeight": "800"
+                                      "type": "icon_font",
+                                      "id": "RotHO",
+                                      "name": "app2i",
+                                      "width": 14,
+                                      "height": 14,
+                                      "iconFontName": "check",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "#22C55E"
                                     },
                                     {
                                       "type": "text",
-                                      "id": "lGlFB",
-                                      "name": "prodSpec2B",
-                                      "fill": "$--black-primary",
-                                      "content": "Linha pesada",
+                                      "id": "rFzFl",
+                                      "name": "app2t",
+                                      "fill": "#4B5563",
+                                      "content": "Carreta Frigorífica",
                                       "fontFamily": "Manrope",
-                                      "fontSize": 12,
-                                      "fontWeight": "900"
+                                      "fontSize": 14,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "h2Br2f",
+                                  "name": "app3",
+                                  "width": "fill_container",
+                                  "gap": 8,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon_font",
+                                      "id": "k533j",
+                                      "name": "app3i",
+                                      "width": 14,
+                                      "height": 14,
+                                      "iconFontName": "check",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "#22C55E"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "KkNdT",
+                                      "name": "app3t",
+                                      "fill": "#4B5563",
+                                      "content": "Carreta Sider",
+                                      "fontFamily": "Manrope",
+                                      "fontSize": 14,
+                                      "fontWeight": "700"
                                     }
                                   ]
                                 }
@@ -5717,75 +5415,124 @@
                             },
                             {
                               "type": "frame",
-                              "id": "B3HrM",
-                              "name": "prodDetailBtn",
+                              "id": "eI1Ic",
+                              "name": "catalogSection",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 10,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "R8dG8p",
+                                  "name": "catalogTitle",
+                                  "fill": "$--black-primary",
+                                  "content": "Catálogo associado",
+                                  "fontFamily": "Manrope",
+                                  "fontSize": 14,
+                                  "fontWeight": "900"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "kjgP6",
+                                  "name": "catalogRow",
+                                  "width": "fill_container",
+                                  "gap": 12,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "qG0Rc",
+                                      "name": "info",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 6,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "tjOHV",
+                                          "name": "info1",
+                                          "fill": "$--gray-text",
+                                          "content": " Ferragens 2024",
+                                          "fontFamily": "Manrope",
+                                          "fontSize": 14,
+                                          "fontWeight": "900"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "o2L0B",
+                                          "name": "cta",
+                                          "fill": "$--white",
+                                          "cornerRadius": 8,
+                                          "stroke": {
+                                            "align": "inside",
+                                            "thickness": 1,
+                                            "fill": "#7ED2BE"
+                                          },
+                                          "gap": 8,
+                                          "padding": [
+                                            10,
+                                            16
+                                          ],
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "p8Zm8n",
+                                              "name": "ctaText",
+                                              "fill": "#0F8A6D",
+                                              "content": "Ver no catálogo",
+                                              "fontFamily": "Manrope",
+                                              "fontSize": 14,
+                                              "fontWeight": "900"
+                                            },
+                                            {
+                                              "type": "icon_font",
+                                              "id": "tw4f0",
+                                              "name": "ctaIcon",
+                                              "width": 14,
+                                              "height": 14,
+                                              "iconFontName": "external-link",
+                                              "iconFontFamily": "lucide",
+                                              "fill": "#0F8A6D"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "u2R63",
+                              "name": "waBtn",
                               "width": "fill_container",
                               "height": 48,
-                              "fill": "$--yellow-primary",
-                              "cornerRadius": 8,
+                              "fill": "#22C55E",
+                              "cornerRadius": 6,
                               "gap": 8,
                               "justifyContent": "center",
                               "alignItems": "center",
                               "children": [
                                 {
                                   "type": "icon_font",
-                                  "id": "ujGeI",
-                                  "name": "prodDetailBtnIcon",
+                                  "id": "ATi2E",
+                                  "name": "waIcon",
                                   "width": 18,
                                   "height": 18,
                                   "iconFontName": "message-circle",
                                   "iconFontFamily": "lucide",
-                                  "fill": "$--black-primary"
+                                  "fill": "#FFFFFF"
                                 },
                                 {
                                   "type": "text",
-                                  "id": "uSdUn",
-                                  "name": "prodDetailBtnTxt",
-                                  "fill": "$--black-primary",
+                                  "id": "axzds",
+                                  "name": "waText",
+                                  "fill": "#FFFFFF",
                                   "content": "Falar no WhatsApp",
                                   "fontFamily": "Manrope",
                                   "fontSize": 14,
-                                  "fontWeight": "900"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
-                              "id": "mupKX",
-                              "name": "prodDetailCatalogNote",
-                              "width": "fill_container",
-                              "fill": "#FFF9E8",
-                              "cornerRadius": 8,
-                              "stroke": {
-                                "align": "inside",
-                                "thickness": 1,
-                                "fill": "#F4E3A8"
-                              },
-                              "gap": 8,
-                              "padding": [
-                                10,
-                                12
-                              ],
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon_font",
-                                  "id": "e14Fw",
-                                  "name": "prodDetailCatalogNoteIcon",
-                                  "width": 16,
-                                  "height": 16,
-                                  "iconFontName": "book-open",
-                                  "iconFontFamily": "lucide",
-                                  "fill": "#8A6300"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "MpKIF",
-                                  "name": "prodDetailCatalogNoteText",
-                                  "fill": "#8A6300",
-                                  "content": "Ela está nesse catálogo",
-                                  "fontFamily": "Manrope",
-                                  "fontSize": 13,
                                   "fontWeight": "900"
                                 }
                               ]
@@ -6769,6 +6516,20 @@
           ]
         }
       ]
+    },
+    {
+      "type": "rectangle",
+      "id": "QnZmR",
+      "x": 50239,
+      "y": -896,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "image-1.png",
+        "mode": "fill"
+      },
+      "width": 32,
+      "height": 32
     }
   ],
   "variables": {

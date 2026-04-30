@@ -1,6 +1,6 @@
 ## Context
 
-O repositorio ainda esta em fase inicial de integracao com CMS: existe um ponto reservado em `src/cms/sanity/sanity.ts` e uma pasta dedicada `src/cms/sanity/schemas/`, enquanto os DTOs de dominio ja descrevem categorias, produtos, catalogos, imagens e arquivos PDF. A modelagem precisa partir desses contratos para evitar que o schema editorial do Sanity nasca desalinhado do dominio da aplicacao.
+O repositorio ainda esta em fase inicial de integracao com CMS: existe um ponto reservado em `src/cms/sanity/sanity.ts`, mas sem implementacao, enquanto os DTOs de dominio ja descrevem categorias, produtos, catalogos, imagens e arquivos PDF. A modelagem precisa partir desses contratos para evitar que o schema editorial do Sanity nasca desalinhado do dominio da aplicacao.
 
 As decisoes ja exploradas para esta mudanca sao:
 
@@ -111,7 +111,7 @@ Alternativas consideradas:
 
 1. Introduzir os schemas internos `image` e `pdfFile`.
 2. Introduzir os documentos `application`, `category`, `product` e `catalog` usando esses objetos internos.
-3. Criar esses arquivos em `src/cms/sanity/schemas/` e ajustar exportacao/registro no ponto de entrada do Sanity.
+3. Ajustar exportacao/registro dos schemas no ponto de entrada do Sanity.
 4. Alinhar os DTOs e imports relacionados para refletir o contrato final esperado.
 5. Validar que a estrutura resultante suporta o mapeamento futuro para `ImageDto` e `PdfFileDto`.
 
@@ -121,9 +121,5 @@ Rollback:
 
 ## Open Questions
 
-Nenhuma no momento.
-
-Decisoes confirmadas durante a exploracao:
-
-- `description` de `product` permanece texto simples nesta fase.
-- `inStock` e um campo editorial.
+- `description` de `product` deve permanecer texto simples nesta fase ou existe expectativa de Portable Text em seguida? texto simples
+- `inStock` e um campo editorial mesmo ou um placeholder temporario para dado operacional externo? campo editorial

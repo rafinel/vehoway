@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@theme {
+  --color-vh-yellow: #f6c21f;
+  --color-vh-yellow-hover: #e5ae12;
+  --color-vh-brown: #8a6300;
+  --color-vh-bg: #f7f7f4;
+  --color-vh-surface: #ffffff;
+  --color-vh-ink: #050505;
+  --color-vh-copy: #111827;
+  --color-vh-muted: #6b7280;
+  --color-vh-border: #e5e7eb;
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+html {
+  background: var(--color-vh-bg);
+  color: var(--color-vh-copy);
+  font-family: var(--font-body);
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgb(246 194 31 / 0.08), transparent 24%),
+    var(--color-vh-bg);
+  min-height: 100vh;
+}
+
+.vh-shell {
+  @apply mx-auto max-w-[1496px] text-vh-copy;
+}
+
+.vh-section-title {
+  @apply font-[var(--font-display)] text-3xl font-extrabold tracking-[-0.03em] text-vh-copy md:text-4xl;
+}
+
+.vh-panel {
+  @apply rounded-2xl border border-vh-border bg-vh-surface shadow-[0_12px_36px_rgba(15,23,42,0.08)];
+}
+
+.vh-button-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-vh-yellow px-6 py-3 text-sm font-bold text-vh-ink transition hover:bg-vh-yellow-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vh-ink;
+}
+
+.vh-button-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/35 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+}

@@ -1,0 +1,32 @@
+---
+import '@/styles/global.css'
+
+type Props = {
+  description?: string
+  title?: string
+}
+
+const {
+  description = 'Homepage institucional da Vehoway com linhas de produto, catalogos publicos e contato comercial via WhatsApp.',
+  title = 'Vehoway | Autopecas rodoviarias',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <meta content="width=device-width" name="viewport" />
+    <meta content={Astro.generator} name="generator" />
+    <meta content={description} name="description" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

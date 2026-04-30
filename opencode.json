@@ -17,6 +17,19 @@
       ],
       "enabled": true,
       "type": "local"
+    },
+    "sanity": {
+      "type": "remote",
+      "url": "https://mcp.sanity.io",
+      "oauth": {}
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true
     }
   }
 }

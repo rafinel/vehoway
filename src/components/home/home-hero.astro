@@ -1,0 +1,52 @@
+---
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowRight01Icon, Shield01Icon, Timer02Icon, TruckIcon } from '@hugeicons/core-free-icons'
+import heroBackground from '@/assets/images/hero-bg.png'
+
+const backgroundUrl = heroBackground.src
+
+const proofItems = [
+  { icon: Shield01Icon, label: 'Qualidade comprovada' },
+  { icon: Timer02Icon, label: 'Resposta rapida' },
+  { icon: TruckIcon, label: 'Cobertura nacional' },
+]
+---
+
+<section class="relative overflow-hidden bg-vh-ink" id="topo">
+  <img alt="Caminhao em rota rodoviaria ao amanhecer" class="absolute inset-0 h-full w-full object-cover opacity-80" src={backgroundUrl} />
+  <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.88),rgba(5,5,5,0.58),rgba(5,5,5,0.18))]"></div>
+  <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02),rgba(5,5,5,0.42))]"></div>
+  <div class="vh-shell relative grid min-h-[620px] gap-12 px-5 py-14 md:px-8 md:py-20 lg:grid-cols-[minmax(0,1fr)_max-content] lg:px-16">
+    <div class="max-w-3xl self-center pt-8">
+      <div class="mb-6 h-1 w-[76px] rounded-full bg-vh-yellow"></div>
+      <p class="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-vh-yellow">Distribuicao tecnica para implementos rodoviarios</p>
+      <h1 class="font-[var(--font-display)] text-[2.5rem] font-extrabold leading-[0.9] tracking-[-0.06em] text-white md:text-[4.625rem]">
+        <span class="block text-white/92">Solucoes completas em</span>
+        <span class="block">implementos</span>
+        <span class="block">rodoviarios.</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-base leading-7 text-white/78 md:text-lg">
+        A homepage da Vehoway apresenta categorias, catalogos e atendimento consultivo com linguagem industrial,
+        resposta comercial agil e direcao visual firme para quem compra pecas com contexto tecnico.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a class="vh-button-primary" href="#categorias">
+          Conheca nossas categorias
+          <HugeiconsIcon icon={ArrowRight01Icon} className="h-[18px] w-[18px]" strokeWidth={2.2} />
+        </a>
+        <a class="vh-button-secondary" href="#especialistas">Falar com especialista</a>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2.5 self-start pt-2 lg:max-w-[340px] lg:justify-end lg:justify-self-end">
+      {
+        proofItems.map(({ icon: Icon, label }) => (
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white shadow-[0_8px_20px_rgba(0,0,0,0.18)] backdrop-blur-sm">
+            <HugeiconsIcon icon={Icon} className="h-[14px] w-[14px] text-vh-yellow" strokeWidth={2} />
+            <span>{label}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

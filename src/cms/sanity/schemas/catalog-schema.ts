@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity'
 
 export const catalogSchema = defineType({
   name: 'catalog',
-  title: 'Catalogo',
+  title: 'Catálogos',
   type: 'document',
   fields: [
     defineField({
@@ -15,12 +15,26 @@ export const catalogSchema = defineType({
       name: 'image',
       title: 'Imagem',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Texto alternativo',
+          type: 'string',
+          validation: (rule) => rule.required().min(1),
+        }),
+      ],
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'pdfFile',
       title: 'Arquivo PDF',
-      type: 'pdfFile',
+      type: 'file',
+      options: {
+        accept: 'application/pdf',
+      },
       validation: (rule) => rule.required(),
     }),
   ],

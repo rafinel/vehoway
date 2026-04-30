@@ -1,0 +1,67 @@
+---
+import { HugeiconsIcon } from '@hugeicons/react';
+import { HeadsetIcon } from '@hugeicons/core-free-icons';
+import { HOME_PAGE_SPECIALISTS } from '@/constants/home-page-specialists';
+import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
+
+const whatsappMessage =
+  'Ola, equipe Vehoway. Quero falar com um especialista sobre pecas e catalogos.';
+---
+
+<section
+  class='vh-shell grid gap-8 px-5 py-14 md:px-8 lg:grid-cols-[minmax(280px,0.7fr)_minmax(0,1.2fr)] lg:items-center'
+  id='especialistas'
+>
+  <div>
+    <p class='mb-3 text-sm font-bold uppercase tracking-[0.24em] text-vh-brown'>
+      Ajuda comercial
+    </p>
+    <h2
+      class='font-[var(--font-display)] text-4xl font-black leading-[0.96] tracking-[-0.05em] text-vh-copy md:text-5xl'
+    >
+      Precisa de ajuda para escolher?
+    </h2>
+    <p class='mt-5 max-w-xl text-base leading-7 text-vh-muted'>
+      A estrutura comercial desta versao fica no frontend: contato de WhatsApp
+      global, especialistas hardcoded e uma mensagem pronta para acelerar o
+      primeiro atendimento.
+    </p>
+  </div>
+
+  <div class='grid gap-5 md:grid-cols-2'>
+    {
+      HOME_PAGE_SPECIALISTS.map(specialist => (
+        <article class='rounded-[16px] border border-vh-border bg-white p-5 shadow-[0_10px_28px_rgba(15,23,42,0.08)]'>
+          <div class='mb-5 flex items-center gap-4'>
+            <div class='grid h-14 w-14 place-items-center rounded-2xl bg-vh-ink text-lg font-black text-vh-yellow'>
+              {specialist.initials}
+            </div>
+            <div>
+              <h3 class='font-[var(--font-display)] text-lg font-extrabold tracking-[-0.03em] text-vh-copy'>
+                {specialist.name}
+              </h3>
+              <p class='text-sm font-semibold text-vh-muted'>
+                {specialist.role}
+              </p>
+            </div>
+          </div>
+          <div>
+            <a
+              class='vh-button-primary w-full'
+              href={buildWhatsAppUrl(whatsappMessage, specialist.whatsappNumber)}
+              rel='noreferrer'
+              target='_blank'
+            >
+              <HugeiconsIcon
+                icon={HeadsetIcon}
+                className='h-[17px] w-[17px]'
+                strokeWidth={2}
+              />
+              Chamar no WhatsApp
+            </a>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

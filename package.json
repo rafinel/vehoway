@@ -15,18 +15,26 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
+    "@astrojs/netlify": "^7.0.8",
     "@astrojs/react": "^5.0.4",
+    "@hugeicons/core-free-icons": "^4.1.1",
+    "@hugeicons/react": "^1.1.6",
     "@sanity/astro": "^3.3.1",
     "@sanity/client": "^7.22.0",
+    "@tailwindcss/vite": "^4.2.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro": "^6.1.10",
+    "daisyui": "^5.5.19",
+    "jszip": "^3.10.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-is": "^19.2.5",
     "sanity": "^5.22.0",
     "styled-components": "^6.4.1",
-    "typescript": "^5.9.3"
+    "tailwindcss": "^4.2.4",
+    "typescript": "^5.9.3",
+    "zod": "^4.4.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.13"

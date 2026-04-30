@@ -1,0 +1,151 @@
+---
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  ArrowRight01Icon,
+  ArrowUpRight01Icon,
+} from '@hugeicons/core-free-icons';
+import { sanityCatalogsCollection } from '@/cms/sanity/collections';
+import { HOME_PAGE_LIMITS } from '@/constants/home-page-limits';
+import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
+
+export type HomeCatalogCard = {
+  id: string;
+  imageAlt: string;
+  imageUrl: string;
+  name: string;
+  pdfUrl?: string;
+};
+
+const catalogsResult = await sanityCatalogsCollection
+  .getCatalogs()
+  .catch(() => []);
+
+const catalogs: HomeCatalogCard[] = catalogsResult
+  .slice(0, HOME_PAGE_LIMITS.catalogs)
+  .map(catalog => ({
+    id: catalog.id,
+    imageAlt: catalog.image.alt,
+    imageUrl: catalog.image.url,
+    name: catalog.name,
+    pdfUrl: catalog.pdfFile.url,
+  }));
+
+const whatsappUrl = buildWhatsAppUrl(
+  'Olá, equipe da Vehoway Business. Quero orientação comercial sobre os catalogos publicados.',
+);
+
+const featuredCatalog = catalogs[0];
+const sideCatalogs = catalogs.slice(1, 3);
+---
+
+<section class='bg-vh-ink' id='catalogos'>
+  <div
+    class='vh-shell grid gap-10 overflow-hidden px-5 py-14 text-white md:px-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:items-center lg:px-16'
+  >
+    <div>
+      <div
+        class='mb-4 inline-flex items-center rounded-full border border-white/10 bg-white/8 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white/90'
+      >
+        Catalogos atualizados
+      </div>
+      <h2
+        class='font-[var(--font-display)] text-4xl font-black tracking-[-0.04em] text-white md:text-[2.125rem]'
+      >
+        Catalogos atualizados
+      </h2>
+      <p class='mt-5 max-w-xl text-base leading-7 text-white/78'>
+        Organize o acesso aos catalogos publicados, destaque as linhas atendidas
+        e ofereca um caminho direto para baixar ou falar com o time comercial.
+      </p>
+      <div class='mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap'>
+        <a
+          class='vh-button-primary'
+          href={whatsappUrl}
+          rel='noreferrer'
+          target='_blank'>Ver catalogos</a
+        >
+        <a class='vh-button-secondary' href='/api/catalogs/download-all'>
+          Baixar materiais
+          <HugeiconsIcon
+            icon={ArrowUpRight01Icon}
+            className='h-[18px] w-[18px]'
+            strokeWidth={2.2}
+          />
+        </a>
+      </div>
+
+      <div class='mt-7 space-y-3'>
+        {
+          sideCatalogs.map(catalog => (
+            <a
+              class='flex items-center justify-between rounded-xl border border-white/10 bg-white/6 px-4 py-3 transition hover:bg-white/10'
+              href={catalog.pdfUrl ?? '#footer'}
+              rel='noreferrer'
+              target={catalog.pdfUrl ? '_blank' : undefined}
+            >
+              <span class='text-sm font-semibold text-white/88'>
+                {catalog.name}
+              </span>
+              <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
+                className='h-4 w-4 text-vh-yellow'
+                strokeWidth={2.2}
+              />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class='relative min-h-[290px] lg:min-h-[320px]'>
+      <div
+        class='absolute right-8 top-2 h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(246,194,31,0.28),rgba(246,194,31,0))]'
+      >
+      </div>
+      {
+        featuredCatalog && (
+          <>
+            <article class='relative z-10 w-[190px] rounded-[10px] bg-white p-2.5 shadow-[0_18px_38px_rgba(0,0,0,0.4)] sm:w-[220px] lg:absolute lg:left-8 lg:top-4'>
+              <img
+                alt={featuredCatalog.imageAlt}
+                class='h-[250px] w-full rounded-[8px] object-cover sm:h-[286px]'
+                loading='lazy'
+                src={featuredCatalog.imageUrl}
+              />
+            </article>
+            <article class='relative mt-6 overflow-hidden rounded-[12px] bg-white/95 p-3 shadow-[0_16px_36px_rgba(0,0,0,0.32)] sm:ml-32 lg:absolute lg:left-52 lg:top-8 lg:mt-0 lg:w-[430px]'>
+              <img
+                alt={featuredCatalog.imageAlt}
+                class='h-[220px] w-full rounded-[8px] object-cover'
+                loading='lazy'
+                src={sideCatalogs[0]?.imageUrl ?? featuredCatalog.imageUrl}
+              />
+              <div class='mt-4 flex items-center justify-between gap-3 rounded-[10px] bg-black px-4 py-3 text-white'>
+                <div>
+                  <p class='font-[var(--font-display)] text-base font-extrabold tracking-[-0.03em]'>
+                    {featuredCatalog.name}
+                  </p>
+                  <p class='text-sm text-white/62'>
+                    Visual tecnico antes do download
+                  </p>
+                </div>
+                <a
+                  class='flex h-12 w-12 items-center justify-center rounded-full bg-vh-yellow text-vh-ink transition hover:bg-vh-yellow-hover'
+                  href={featuredCatalog.pdfUrl ?? whatsappUrl}
+                  rel='noreferrer'
+                  target='_blank'
+                >
+                  <HugeiconsIcon
+                    icon={ArrowRight01Icon}
+                    className='h-5 w-5'
+                    strokeWidth={2.2}
+                  />
+                </a>
+              </div>
+            </article>
+          </>
+        )
+      }
+    </div>
+  </div>
+</section>

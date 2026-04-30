@@ -2,7 +2,7 @@ import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export const productSchema = defineType({
   name: 'product',
-  title: 'Produto',
+  title: 'Produtos',
   type: 'document',
   fields: [
     defineField({
@@ -21,6 +21,17 @@ export const productSchema = defineType({
       name: 'image',
       title: 'Imagem',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Texto alternativo',
+          type: 'string',
+          validation: (rule) => rule.required().min(1),
+        }),
+      ],
       validation: (rule) => rule.required(),
     }),
     defineField({

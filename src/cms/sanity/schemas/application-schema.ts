@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity'
 
 export const applicationSchema = defineType({
   name: 'application',
-  title: 'Aplicacao',
+  title: 'Aplicações',
   type: 'document',
   fields: [
     defineField({

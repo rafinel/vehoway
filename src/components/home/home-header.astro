@@ -1,0 +1,142 @@
+---
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowDown01Icon, WhatsappIcon } from '@hugeicons/core-free-icons';
+import { sanityCategoriesCollection } from '@/cms/sanity/collections';
+import { ROUTES } from '@/constants/routes';
+import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
+
+const currentPath = Astro.url.pathname;
+const categories = await sanityCategoriesCollection
+  .getCategories()
+  .catch(() => []);
+
+const navItems = [
+  { href: ROUTES.home, isActive: currentPath === ROUTES.home, label: 'Home' },
+  {
+    href: ROUTES.products,
+    isActive: currentPath === ROUTES.products,
+    label: 'Produtos',
+  },
+];
+
+const whatsappUrl = buildWhatsAppUrl(
+  'Ola, equipe Vehoway. Quero falar com um especialista comercial.',
+);
+---
+
+<header
+  class='sticky top-0 z-30 border-b border-vh-border/80 bg-white/92 backdrop-blur'
+>
+  <div
+    class='vh-shell flex items-center justify-between gap-4 px-5 py-4 md:px-8 lg:h-[92px] lg:px-16'
+  >
+    <a aria-label='Vehoway' class='flex items-center gap-3' href={ROUTES.home}>
+      <div
+        class='grid h-[42px] w-[42px] place-items-center rounded-[10px] bg-vh-ink text-[1.75rem] font-black text-vh-yellow'
+      >
+        V
+      </div>
+      <div class='leading-none'>
+        <p
+          class='font-[var(--font-display)] text-xl font-extrabold tracking-[0.08em] text-vh-copy'
+        >
+          VEHOWAY
+        </p>
+        <p
+          class='text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-vh-muted'
+        >
+          autopecas rodoviarias
+        </p>
+      </div>
+    </a>
+
+    <nav
+      aria-label='Navegacao principal'
+      class='hidden items-center gap-9 md:flex'
+    >
+      <a
+        aria-current={navItems[0]?.isActive ? 'page' : undefined}
+        class:list={[
+          'relative text-sm transition hover:text-vh-brown focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vh-ink',
+          navItems[0]?.isActive
+            ? 'font-bold text-vh-brown'
+            : 'font-semibold text-vh-copy',
+        ]}
+        href={ROUTES.home}
+      >
+        <span class='inline-flex items-center gap-2'>Home</span>
+        {
+          navItems[0]?.isActive && (
+            <span class='absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-vh-yellow' />
+          )
+        }
+      </a>
+
+      <div class='group relative -mb-4 pb-4'>
+        <a
+          aria-current={navItems[1]?.isActive ? 'page' : undefined}
+          class:list={[
+            'relative inline-flex text-sm transition hover:text-vh-brown focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vh-ink',
+            navItems[1]?.isActive
+              ? 'font-bold text-vh-brown'
+              : 'font-semibold text-vh-copy',
+          ]}
+          href={ROUTES.products}
+        >
+          <span class='inline-flex items-center gap-2'>
+            Produtos
+            <HugeiconsIcon
+              icon={ArrowDown01Icon}
+              className='h-3.5 w-3.5'
+              strokeWidth={2}
+            />
+            {
+              navItems[1]?.isActive && (
+                <span class='h-1.5 w-1.5 rounded-full bg-vh-yellow' />
+              )
+            }
+          </span>
+          {
+            navItems[1]?.isActive && (
+              <span class='absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-vh-yellow' />
+            )
+          }
+        </a>
+
+        {
+          categories.length > 0 && (
+            <div class='invisible absolute left-1/2 top-full z-20 w-72 -translate-x-1/2 rounded-2xl border border-vh-border bg-white p-2 opacity-0 shadow-[0_18px_44px_rgba(15,23,42,0.16)] transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100'>
+              <div class='mb-1 px-3 py-2 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-vh-muted'>
+                Categorias
+              </div>
+              <div class='space-y-1'>
+                {categories.map(category => (
+                  <a
+                    class='block rounded-xl px-3 py-2 text-sm font-semibold text-vh-copy transition hover:bg-vh-paper hover:text-vh-brown'
+                    href={`${ROUTES.products}?category=${encodeURIComponent(category.id)}`}
+                  >
+                    {category.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )
+        }
+      </div>
+    </nav>
+
+    <a
+      class='vh-button-primary hidden md:inline-flex'
+      href={whatsappUrl}
+      rel='noreferrer'
+      target='_blank'
+    >
+      <HugeiconsIcon
+        icon={WhatsappIcon}
+        className='h-[18px] w-[18px]'
+        strokeWidth={2}
+      />
+      Fale no WhatsApp
+    </a>
+  </div>
+</header>

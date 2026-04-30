@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# Vehoway
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Site institucional da Vehoway em Astro com Sanity Studio embutido em `/admin` e deploy preparado para Netlify.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- Astro 6
+- `@astrojs/netlify`
+- Sanity (`@sanity/astro` + Studio em `/admin`)
+- Tailwind CSS
 
-Inside of your Astro project, you'll see the following folders and files:
+## Scripts
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- `npm run dev`: sobe o ambiente local
+- `npm run typecheck`: valida tipos e arquivos Astro
+- `npm run build`: gera a build de produção
+- `npm run preview`: preview local da build
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Variáveis de ambiente
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Configure estas variáveis na Netlify:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- `SANITY_PROJECT_ID`: project id do Sanity
+- `SANITY_DATASET`: dataset usado pelo site e pelo Studio
 
-## 🧞 Commands
+Variável opcional:
 
-All commands are run from the root of the project, from a terminal:
+- `SANITY_API_TOKEN`: só necessária se algum fluxo futuro exigir acesso autenticado ao Sanity
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Deploy na Netlify
 
-## 👀 Want to learn more?
+1. Importe o repositório na Netlify.
+2. Configure o comando de build como `npm run build`.
+3. Configure o publish directory como `dist`.
+4. Configure as variáveis `SANITY_PROJECT_ID` e `SANITY_DATASET`.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+O projeto já está configurado com `@astrojs/netlify` e `netlify.toml`, então SSR, API routes e o Studio em `/admin` já ficam compatíveis com a plataforma.
+
+## Rotas principais
+
+- `/`: homepage
+- `/admin`: Sanity Studio embutido
+- `/api/catalogs/download-all`: baixa um `.zip` com todos os catálogos publicados
+
+## Checklist antes de publicar
+
+1. Rode `npm run typecheck`
+2. Rode `npm run build`
+3. Confirme que existem categorias e catálogos publicados no Sanity
+4. Confirme as variáveis de ambiente no painel da Netlify

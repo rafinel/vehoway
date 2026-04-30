@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity'
 
 export const categorySchema = defineType({
   name: 'category',
-  title: 'Categoria',
+  title: 'Categorias',
   type: 'document',
   fields: [
     defineField({
@@ -15,6 +15,17 @@ export const categorySchema = defineType({
       name: 'image',
       title: 'Imagem',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Texto alternativo',
+          type: 'string',
+          validation: (rule) => rule.required().min(1),
+        }),
+      ],
       validation: (rule) => rule.required(),
     }),
   ],

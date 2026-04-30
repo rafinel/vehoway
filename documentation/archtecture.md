@@ -4,10 +4,10 @@
 
 ## 1. Visão Geral do Sistema
 
-**Propósito:** Site vitrine para distribuidora de autopeças. Resolve a ausência de presença digital qualificada: organiza linhas de produto em hubs por categoria, oferece consulta de peças com card expandido, prévia interativa de catálogos (PDF) e geração de leads via WhatsApp/e-mail/telefone.
+**Propósito:** Site vitrine para distribuidora de autopeças. Resolve a ausência de presença digital qualificada: organiza linhas de produto em hubs por categoria, oferece consulta de peças com card expandido, prévia interativa de catálogos (PDF) e geração de leads via WhatsApp.
 
 **Escopo — dentro:**
-- Site público (home, produtos, catálogos, profissionais)
+- Site público (home, produtos, catálogos)
 - CMS headless para gestão de conteúdo (Sanity Studio)
 - Download público de catálogos (PDFs hospedados no Sanity CDN)
 - Integração WhatsApp com mensagem pré-preenchida
@@ -22,7 +22,7 @@
 
 | ID | Requisito |
 |---|---|
-| FR-01 | Home com cards de categorias, catálogos e profissionais |
+| FR-01 | Home com cards de categorias e catálogos |
 | FR-02 | Página `/products` com filtros por categoria, aplicação e catálogo via query params |
 | FR-03 | Card de peça com card expandido (drawer) com ações: prévia, download, contato |
 | FR-04 | Modal de prévia de catálogo antes do download |
@@ -37,7 +37,7 @@
 - Frontend obrigatório: Astro JS
 - CMS obrigatório: Sanity
 - Renderização: SSG híbrido (`output: 'hybrid'`) — home SSG, products SSR
-- Hosting: Vercel
+- Hosting: Netlify
 
 ---
 
@@ -53,7 +53,7 @@
 └──────────────────────┬──────────────────────────┘
                        │ HTTPS
 ┌──────────────────────▼──────────────────────────┐
-│              Vercel CDN Edge                     │
+│              Netlify CDN Edge                    │
 │     (SSG cache / SSR stale-while-revalidate)     │
 └──────────┬───────────────────────┬──────────────┘
            │                       │
@@ -89,7 +89,7 @@
 
 | Página | Rota | Rendering | Responsabilidade |
 |---|---|---|---|
-| Home | `/` | SSG | Hero, cards de categorias, catálogos, profissionais |
+| Home | `/` | SSG | Hero, cards de categorias e catálogos |
 | Products | `/products` | SSR (`prerender = false`) | Filtros server-side via query params, paginação, listagem |
 
 **Configuração Astro:**
@@ -114,8 +114,8 @@ export const prerender = false
 - **NFRs cobertos:** UX mobile, paginação visual
 
 #### `<ProductDrawer />`
-- **Responsabilidade:** painel lateral com detalhes completos da peça — imagem, descrição, aplicações, catálogo associado e CTA de contato/download
-- **Interface:** recebe `product` e `professionals` como props
+- **Responsabilidade:** painel lateral com detalhes completos da peça — imagem, aplicações, catálogo associado e CTA de contato/download
+- **Interface:** recebe `product` como prop
 - **NFRs cobertos:** UX mobile (drawer touch-friendly)
 
 #### `<CatalogModal />`
@@ -124,8 +124,8 @@ export const prerender = false
 - **NFRs cobertos:** experiência antes do download, fallback de erro
 
 #### `<ContactWhatsApp />`
-- **Responsabilidade:** monta URL do WhatsApp com mensagem pré-preenchida (categoria + código da peça) e exibe alternativas de e-mail e telefone
-- **Interface:** recebe `professional`, `category`, `product?`
+- **Responsabilidade:** monta URL do WhatsApp com mensagem pré-preenchida (categoria + código da peça)
+- **Interface:** recebe `category`, `product?`
 - **NFRs cobertos:** geração de leads, mobile-first
 
 **Data Layer:**
@@ -134,6 +134,8 @@ export const prerender = false
 |---|---|
 | Home (`/`) | GROQ em build time |
 | Products (`/products`) | GROQ em runtime via `Astro.request` + query params — filtros e paginação resolvidos no servidor |
+
+**Observação:** contato comercial não é gerido pelo Sanity nesta versão. O WhatsApp é global e configurado no frontend; profissionais exibidos na home são hardcoded no frontend.
 
 ---
 
@@ -157,7 +159,6 @@ export const prerender = false
 | `name` | string | Nome da peça |
 | `code` | string | Código da peça (ex: "PR-1127") |
 | `image` | image | Foto do produto |
-| `shortDescription` | text | Descrição exibida no card expandido |
 | `applications` | array → string | Aplicações (ex: "Carreta Baú") |
 | `inStock` | boolean | Exibe badge "Em estoque" |
 | `isFeatured` | boolean | Destaque na listagem |
@@ -174,25 +175,16 @@ export const prerender = false
 | `image` | image | Imagem de capa |
 | `pdfFile` | file | Arquivo PDF (Sanity Asset CDN) |
 
-### `professional`
-
-| Campo | Tipo Sanity | Descrição |
-|---|---|---|
-| `_id` | string | Gerado pelo Sanity |
-| `name` | string | Nome do profissional |
-| `role` | string | Cargo/papel |
-| `photo` | image | Foto do profissional |
-| `categories` | array → reference `category` | Categorias atendidas |
-| `whatsapp` | string | Número com DDI (obrigatório) |
-| `email` | string | E-mail (opcional) |
-| `phone` | string | Telefone (opcional) |
+**Contato comercial fora do CMS:**
+- WhatsApp global configurado no frontend
+- Profissionais exibidos na home mantidos como configuração hardcoded no frontend
+- Nenhuma relação entre `professional` e `product`
 
 **Relacionamentos:**
 
 ```
 category  1:N  product
 category  1:N  catalog  (via product.catalog)
-category  N:N  professional
 product   N:1  catalog
 ```
 
@@ -202,10 +194,10 @@ product   N:1  catalog
 
 | NFR | Requisito | Decisão Arquitetural |
 |---|---|---|
-| Performance | Carregamento rápido | SSG para home + cache `stale-while-revalidate` no Vercel para `/products` |
+| Performance | Carregamento rápido | SSG para home + cache CDN/SSR na Netlify para `/products` |
 | SEO | Páginas indexáveis | HTML renderizado no servidor (SSR) — Google indexa sem JS |
 | Manutenibilidade | Conteúdo atualizável sem deploy de código | Sanity Studio com publish/unpublish + dados frescos em runtime no SSR |
-| Escalabilidade | Suportar picos de acesso | Vercel Edge + cache absorve picos sem escalar servidor |
+| Escalabilidade | Suportar picos de acesso | Netlify Edge/CDN + cache absorvem picos sem escalar servidor |
 | Disponibilidade | Site resiliente | Home SSG na CDN não depende do Sanity em runtime |
 | Manutenibilidade de código | Código legível e expansível | Componentes React em inglês, queries centralizadas, schemas tipados |
 | UX Mobile | Experiência equivalente ao desktop | DaisyUI mobile-first + React islands com suporte a touch |
@@ -217,13 +209,14 @@ product   N:1  catalog
 | Camada | Tecnologia | Justificativa |
 |---|---|---|
 | Framework | Astro JS | SSG + SSR híbrido nativo, islands architecture |
-| UI | Tailwind CSS + DaisyUI | Componentes prontos (modal, card, drawer, badge) sem runtime overhead |
+| Styling | Tailwind CSS | Base utilitária para layout, responsividade e tokens de interface |
+| UI | DaisyUI | Componentes prontos (modal, card, drawer, badge) sobre Tailwind, sem runtime overhead |
 | Islands | React | Ecossistema maduro, DX superior para filtros e estado de UI |
 | CMS | Sanity | Headless, GROQ flexível, Asset CDN integrado |
 | Linguagem | TypeScript | Tipagem dos schemas e queries garante segurança |
-| Hosting | Vercel | Suporte nativo a Astro SSR, CDN edge, cache headers, preview deploys |
-| Adapter | `@astrojs/vercel` | Habilita SSR no Astro com output otimizado para Vercel |
-| CI/CD | Vercel + webhook Sanity | Deploy automático no push + rebuild da home ao publicar no Studio |
+| Hosting | Netlify | Suporte a Astro SSR, CDN global, functions e preview deploys |
+| Adapter | `@astrojs/netlify` | Habilita SSR no Astro com output otimizado para Netlify |
+| CI/CD | Netlify + webhook Sanity | Deploy automático no push + rebuild da home ao publicar no Studio |
 | Assets | Sanity Asset CDN | PDFs e imagens servidos pelo Sanity — zero infraestrutura extra |
 
 ---
@@ -258,7 +251,7 @@ product   N:1  catalog
 
 ## 8. Arquitetura de Deploy
 
-**Plataforma:** Vercel com `@astrojs/vercel` adapter.
+**Plataforma:** Netlify com `@astrojs/netlify` adapter.
 
 ```
 ┌─────────────────────────────────────┐
@@ -267,7 +260,7 @@ product   N:1  catalog
 └──────────────────┬──────────────────┘
                    │ webhook POST
 ┌──────────────────▼──────────────────┐
-│              Vercel                 │
+│              Netlify                │
 │  1. recebe webhook / push main      │
 │  2. roda astro build                │
 │  3. gera / (SSG estático)           │
@@ -294,15 +287,15 @@ product   N:1  catalog
 | Ambiente | Descrição |
 |---|---|
 | Development | Local (`astro dev`) consumindo Sanity dataset `development` |
-| Preview | Branch feature → Vercel preview deploy automático por PR |
-| Production | Push na `main` → build e deploy automático na Vercel |
+| Preview | Branch feature → Netlify preview deploy automático por branch/PR |
+| Production | Push na `main` → build e deploy automático na Netlify |
 
 **Cache headers em `/products`:**
 ```
 Cache-Control: s-maxage=60, stale-while-revalidate=300
 ```
 
-**Rollback:** histórico completo de deploys na Vercel — rollback em 1 clique.
+**Rollback:** histórico completo de deploys na Netlify com opção de restaurar deploy anterior.
 
 ---
 

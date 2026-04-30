@@ -5,7 +5,7 @@
 A proposta é criar um novo site vitrine moderno para uma distribuidora de autopeças, com foco em:
 
 - Dar vida à marca: credibilidade, presença digital e base para marketing;
-- Facilitar contato com profissionais: geração de leads;
+- Facilitar contato comercial por WhatsApp: geração de leads;
 - Oferecer uma experiência superior ao site de 2023, com catálogos baixáveis e prévia interativa antes do download.
 
 ### Problemas que resolve
@@ -20,7 +20,7 @@ Entregar um site moderno, inspirado em referências do setor, que:
 - Organize linhas/categorias de peças em formato de hub por categoria;
 - Permita explorar peças com código e descrição curta via card expandido;
 - Conecte peças a catálogos, com prévia, download e similares/relacionadas;
-- Viabilize contato rápido com profissionais via WhatsApp, e-mail e telefone.
+- Viabilize contato comercial rápido via WhatsApp global.
 
 ### Páginas/categorias confirmadas
 
@@ -39,7 +39,7 @@ Entregar um site moderno, inspirado em referências do setor, que:
 - [ ] Hub por categoria com visão completa
 
 **Descrição:**  
-Cada categoria do site funciona como um hub, reunindo peças, catálogos e contatos de responsáveis.
+Cada categoria do site funciona como um hub, reunindo peças, catálogos e caminhos para contato comercial.
 
 #### Regras de Negócio
 
@@ -51,8 +51,7 @@ Cada categoria do site funciona como um hub, reunindo peças, catálogos e conta
   - Automação Industrial – Pneumática
 - Cada categoria deve permitir associação com:
   - Peças;
-  - Catálogos;
-  - Profissionais responsáveis.
+  - Catálogos.
 - O conteúdo das categorias deve ser mantido via painel/admin.
 
 #### Regras de UI/UX
@@ -60,7 +59,7 @@ Cada categoria do site funciona como um hub, reunindo peças, catálogos e conta
 - O hub deve ter entradas claras para:
   - Peças;
   - Catálogos;
-  - Falar com um profissional.
+  - Falar com um especialista.
 - Os hubs devem seguir o mesmo padrão de funcionamento entre categorias.
 
 ---
@@ -113,7 +112,7 @@ No hub de cada categoria, as peças aparecem em lista ou grade. Ao interagir com
 - Ações disponíveis no card expandido:
   - Ver no catálogo;
   - Baixar catálogo;
-  - Falar com profissional.
+  - Falar com especialista.
 - No mobile, a interação deve funcionar por toque, sem depender de hover.
 
 ---
@@ -149,34 +148,27 @@ Visitantes conseguem entender o que há no catálogo, por meio de descrição e 
 
 ---
 
-### Fale com nossos profissionais
+### Fale com nossos especialistas
 
-- [ ] Seção/Página “Fale com nossos profissionais” com responsáveis e múltiplos canais
+- [ ] Seção de apoio comercial com WhatsApp global e especialistas do frontend
 
 **Descrição:**  
-Exibir de 2 a 5 profissionais, como vendedores, gerente ou outros responsáveis, com áreas atendidas e canais de contato.
+Exibir de 2 a 5 especialistas/comerciais como apoio institucional da homepage, com CTA principal de WhatsApp global.
 
 #### Regras de Negócio
 
-- Cadastro de profissionais com:
-  - Nome;
-  - Papel;
-  - Categorias atendidas;
-  - WhatsApp obrigatório;
-  - E-mail opcional;
-  - Telefone opcional.
-- No hub da categoria, sugerir o(s) profissional(is) daquela categoria.
+- O contato comercial não é gerido pelo CMS nesta versão.
+- O WhatsApp é global e configurado no frontend.
+- Profissionais/especialistas exibidos na home são hardcoded no frontend.
 - A mensagem pré-preenchida no WhatsApp deve incluir:
   - Categoria;
   - Nome/código da peça, quando acionado a partir de uma peça.
 
 #### Regras de UI/UX
 
-- Os cards devem mostrar claramente o que cada profissional cuida.
-- Ações por canal:
-  - WhatsApp: abrir conversa;
-  - E-mail: abrir cliente de e-mail com assunto sugerido;
-  - Telefone: link clicável para discagem em mobile ou exibir número em desktop.
+- Os cards devem mostrar nome e cargo de cada especialista exibido.
+- A ação principal deve ser:
+  - WhatsApp: abrir conversa com mensagem pré-preenchida.
 
 ---
 
@@ -185,15 +177,14 @@ Exibir de 2 a 5 profissionais, como vendedores, gerente ou outros responsáveis,
 - [ ] Conteúdo modular e fácil de atualizar
 
 **Descrição:**  
-O site deve permitir atualização constante e expansão, com novos catálogos, peças e profissionais, sem retrabalho pesado.
+O site deve permitir atualização constante e expansão, com novos catálogos e peças, sem retrabalho pesado. O bloco comercial da homepage permanece configurado no frontend nesta versão.
 
 #### Regras de Negócio
 
 - Admin com CRUD para:
   - Categorias;
   - Peças;
-  - Catálogos;
-  - Profissionais.
+  - Catálogos.
 - Deve ser possível criar, editar e arquivar conteúdos.
 - O arquivamento deve remover o conteúdo do público sem apagar o histórico.
 - Deve ser possível adicionar novas categorias no futuro, mesmo que nesta versão sejam usadas as 5 categorias fixas.
@@ -224,11 +215,9 @@ O site deve permitir atualização constante e expansão, com novos catálogos, 
 6. O usuário escolhe uma ação:
    - Ver no catálogo: abre modal de prévia;
    - Baixar catálogo: inicia download;
-   - Falar com profissional: abre opções de contato.
+   - Falar com especialista: abre WhatsApp global.
 7. Se o usuário escolher contato, o sistema oferece:
-   - WhatsApp: abre conversa com mensagem pré-preenchida;
-   - E-mail: abre cliente de e-mail com assunto sugerido;
-   - Telefone: inicia ligação no mobile ou exibe número no desktop.
+   - WhatsApp: abre conversa com mensagem pré-preenchida.
 8. Em caso de falha em qualquer canal, o sistema deve exibir alternativa:
    - Copiar contato;
    - Tentar novamente.

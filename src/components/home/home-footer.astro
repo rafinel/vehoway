@@ -1,0 +1,145 @@
+---
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  ArrowUpRight01Icon,
+  Home03Icon,
+  Mail01Icon,
+  WhatsappIcon,
+} from '@hugeicons/core-free-icons';
+import { sanityCategoriesCollection } from '@/cms/sanity/collections';
+import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
+
+const fallbackCategoryNames = [
+  'Pecas Carroceria de Bebidas',
+  'Pecas Inox Bau Frigorifico',
+  'Pecas e Acessorios Caminhoes',
+  'Pecas Implementos Rodoviarios',
+  'Automacao Industrial Pneumatica',
+];
+
+const categoriesResult = await sanityCategoriesCollection
+  .getCategories()
+  .catch(() => []);
+
+const categoryNames =
+  categoriesResult.length > 0
+    ? categoriesResult.map(category => category.name)
+    : fallbackCategoryNames;
+
+const whatsappUrl = buildWhatsAppUrl(
+  'Ola, equipe Vehoway. Quero falar com o contato comercial da homepage.',
+);
+---
+
+<footer class='bg-vh-ink text-white' id='footer'>
+  <div class='vh-shell space-y-8 px-5 py-12 md:px-8'>
+    <div
+      class='h-px w-full bg-[linear-gradient(90deg,#f6c21f,#ffd96b,#f6c21f)]'
+    >
+    </div>
+    <div class='grid gap-10 lg:grid-cols-[minmax(260px,0.9fr)_1fr_1fr_1fr]'>
+      <div class='space-y-4'>
+        <div class='flex items-center gap-3'>
+          <div
+            class='grid h-10 w-10 place-items-center rounded-xl bg-white text-lg font-black text-vh-ink'
+          >
+            V
+          </div>
+          <div>
+            <p
+              class='font-[var(--font-display)] text-lg font-extrabold tracking-[0.08em] text-white'
+            >
+              VEHOWAY
+            </p>
+            <p
+              class='text-xs font-semibold uppercase tracking-[0.2em] text-white/50'
+            >
+              autopecas rodoviarias
+            </p>
+          </div>
+        </div>
+        <p class='max-w-xs text-sm leading-6 text-white/65'>
+          Distribuicao de autopecas e solucoes para implementos rodoviarios com
+          linguagem tecnica, resposta comercial e catalogos publicos.
+        </p>
+      </div>
+
+      <div>
+        <h3
+          class='mb-3 text-sm font-bold uppercase tracking-[0.22em] text-vh-yellow'
+        >
+          Navegacao
+        </h3>
+        <div class='space-y-2 text-sm text-white/70'>
+          <a class='block hover:text-white' href='#topo'>Inicio</a>
+          <a class='block hover:text-white' href='#categorias'>Categorias</a>
+          <a class='block hover:text-white' href='#catalogos'>Catalogos</a>
+        </div>
+      </div>
+
+      <div>
+        <h3
+          class='mb-3 text-sm font-bold uppercase tracking-[0.22em] text-vh-yellow'
+        >
+          Categorias
+        </h3>
+        <div class='space-y-2 text-sm text-white/70'>
+          {categoryNames.map(category => <p>{category}</p>)}
+        </div>
+      </div>
+
+      <div>
+        <h3
+          class='mb-3 text-sm font-bold uppercase tracking-[0.22em] text-vh-yellow'
+        >
+          Contato
+        </h3>
+        <div class='space-y-3 text-sm text-white/70'>
+          <p class='flex items-start gap-2'>
+            <HugeiconsIcon
+              icon={Home03Icon}
+              className='mt-0.5 h-4 w-4 shrink-0 text-vh-yellow'
+              strokeWidth={2}
+            /> R. Utinga, 335 - Jardim Oliveira, Guarulhos - SP, 07210-410, Brasil
+          </p>
+          <a
+            class='flex items-center gap-2 hover:text-white'
+            href='mailto:vehowaybusiness@gmail.com'
+          >
+            <HugeiconsIcon
+              icon={Mail01Icon}
+              className='h-4 w-4 shrink-0 text-vh-yellow'
+              strokeWidth={2.2}
+            />
+            vehowaybusiness@gmail.com
+          </a>
+          <a
+            class='inline-flex items-center gap-2 font-bold text-vh-yellow'
+            href={whatsappUrl}
+            rel='noreferrer'
+            target='_blank'
+          >
+            <HugeiconsIcon
+              icon={WhatsappIcon}
+              className='h-4 w-4'
+              strokeWidth={2}
+            />
+            abrir conversa
+            <HugeiconsIcon
+              icon={ArrowUpRight01Icon}
+              className='h-4 w-4'
+              strokeWidth={2.2}
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class='flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 md:flex-row md:items-center md:justify-between'
+    >
+      <p>© 2026 Vehoway. Todos os direitos reservados.</p>
+      <p>Contato comercial nao e gerido via CMS nesta versao.</p>
+    </div>
+  </div>
+</footer>

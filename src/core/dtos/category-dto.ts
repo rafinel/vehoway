@@ -1,4 +1,4 @@
-import type { ImageDto } from "./image-dto"
+import type { ImageDto } from './image-dto'
 
 export type CategoryDto = {
   id: string

@@ -1,0 +1,37 @@
+---
+import {
+  sanityApplicationsCollection,
+  sanityCatalogsCollection,
+  sanityCategoriesCollection,
+} from '@/cms/sanity/collections'
+import ProductsPage from '@/components/products/products-page'
+import ProductsHero from '@/components/products/products-hero.astro'
+import SiteFooter from '@/components/shared/site-footer.astro'
+import SiteHeader from '@/components/shared/site-header.astro'
+import BaseLayout from '@/layouts/base-layout.astro'
+
+const [applications, catalogs, categories] = await Promise.all([
+  sanityApplicationsCollection.getApplications().catch(() => []),
+  sanityCatalogsCollection.getCatalogs().catch(() => []),
+  sanityCategoriesCollection.getCategories().catch(() => []),
+])
+
+export const prerender = false
+---
+
+<BaseLayout
+  title='Produtos | Vehoway'
+  description='Catalogo publico de produtos da Vehoway com busca, filtros, paginação e contato consultivo.'
+>
+  <SiteHeader />
+  <main>
+    <ProductsHero />
+    <ProductsPage
+      applications={applications}
+      catalogs={catalogs}
+      categories={categories}
+      client:only='react'
+    />
+  </main>
+  <SiteFooter />
+</BaseLayout>

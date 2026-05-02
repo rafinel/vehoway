@@ -2,9 +2,7 @@ import type { SanityClient } from 'sanity'
 import type { CatalogDto } from '@/core/dtos/catalog-dto'
 import type { CatalogsCollection } from '@/core/interfaces/catalogs-collection'
 
-export const SanityCatalogsCollection = (
-  sanity: SanityClient,
-): CatalogsCollection => {
+export const SanityCatalogsCollection = (sanity: SanityClient): CatalogsCollection => {
   return {
     getCatalogs: async () => {
       return await sanity.fetch<CatalogDto[]>(`

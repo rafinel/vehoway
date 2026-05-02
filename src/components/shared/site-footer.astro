@@ -7,24 +7,12 @@ import {
   WhatsappIcon,
 } from '@hugeicons/core-free-icons';
 import { sanityCategoriesCollection } from '@/cms/sanity/collections';
+import { ROUTES } from '@/constants/routes';
 import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
-
-const fallbackCategoryNames = [
-  'Pecas Carroceria de Bebidas',
-  'Pecas Inox Bau Frigorifico',
-  'Pecas e Acessorios Caminhoes',
-  'Pecas Implementos Rodoviarios',
-  'Automacao Industrial Pneumatica',
-];
 
 const categoriesResult = await sanityCategoriesCollection
   .getCategories()
   .catch(() => []);
-
-const categoryNames =
-  categoriesResult.length > 0
-    ? categoriesResult.map(category => category.name)
-    : fallbackCategoryNames;
 
 const whatsappUrl = buildWhatsAppUrl(
   'Ola, equipe Vehoway. Quero falar com o contato comercial da homepage.',
@@ -68,12 +56,11 @@ const whatsappUrl = buildWhatsAppUrl(
         <h3
           class='mb-3 text-sm font-bold uppercase tracking-[0.22em] text-vh-yellow'
         >
-          Navegacao
+          Páginas
         </h3>
         <div class='space-y-2 text-sm text-white/70'>
-          <a class='block hover:text-white' href='#topo'>Inicio</a>
-          <a class='block hover:text-white' href='#categorias'>Categorias</a>
-          <a class='block hover:text-white' href='#catalogos'>Catalogos</a>
+          <a class='block hover:text-white' href={ROUTES.home}>Home</a>
+          <a class='block hover:text-white' href={ROUTES.products}>Produtos</a>
         </div>
       </div>
 
@@ -84,7 +71,16 @@ const whatsappUrl = buildWhatsAppUrl(
           Categorias
         </h3>
         <div class='space-y-2 text-sm text-white/70'>
-          {categoryNames.map(category => <p>{category}</p>)}
+          {
+            categoriesResult.map(category => (
+              <a
+                class='block hover:text-white'
+                href={`${ROUTES.products}?category=${encodeURIComponent(category.id)}`}
+              >
+                {category.name}
+              </a>
+            ))
+          }
         </div>
       </div>
 

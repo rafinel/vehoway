@@ -7,7 +7,7 @@ O projeto ja tem DTOs de dominio para categorias, produtos, catalogos, imagens e
 - Criar a capacidade de modelagem de schemas do Sanity para os DTOs atuais do dominio.
 - Definir `application`, `category`, `product` e `catalog` como tipos de documento do Sanity.
 - Definir `image` e `pdfFile` como object schemas internos reutilizaveis, sem exposicao como documentos independentes.
-- Padronizar o contrato esperado para que todo campo `image` do dominio seja tratado como `ImageDto`, inclusive em `ProductDTO` e `CatalogDto`.
+- Padronizar o contrato esperado para que todo campo `image` do dominio seja tratado como `ImageDto`, inclusive em `ProductDto` e `CatalogDto`.
 - Registrar as validacoes e relacoes essenciais entre documentos e objetos internos.
 
 ## Non-goals
@@ -29,6 +29,6 @@ Nenhuma.
 ## Impact
 
 - Afeta principalmente `src/cms/sanity/schemas/`, onde os schemas do Sanity devem ser criados, alem do ponto de registro em `src/cms/sanity/`.
-- Afeta o alinhamento esperado dos DTOs em `src/core/dtos/`, principalmente `ImageDto`, `PdfFileDto`, `ProductDTO` e `CatalogDto`.
+- Afeta o alinhamento esperado dos DTOs em `src/core/dtos/`, principalmente `ImageDto`, `PdfFileDto`, `ProductDto` e `CatalogDto`.
 - Introduz dependencia conceitual do modelo editorial do Sanity sobre os contratos de dominio ja existentes.
 - Explicita uma inconsistência atual de nomes/caminhos relacionada a `PdfFileDto`, que devera ser considerada na implementacao.

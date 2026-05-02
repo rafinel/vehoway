@@ -238,12 +238,15 @@
               "x": 0,
               "y": 0,
               "name": "vhHeroBgB",
-              "fill": {
-                "type": "image",
-                "enabled": true,
-                "url": "images/generated-1777245934231.png",
-                "mode": "fill"
-              },
+              "fill": [
+                {
+                  "type": "image",
+                  "enabled": true,
+                  "url": "images/generated-1777245934231.png",
+                  "mode": "fill"
+                },
+                "#00000033"
+              ],
               "width": 1496,
               "height": 620
             },
@@ -253,29 +256,6 @@
               "x": 0,
               "y": 0,
               "name": "vhHeroOverlayB",
-              "fill": {
-                "type": "gradient",
-                "gradientType": "linear",
-                "enabled": true,
-                "rotation": 270,
-                "size": {
-                  "height": 1
-                },
-                "colors": [
-                  {
-                    "color": "#000000F0",
-                    "position": 0
-                  },
-                  {
-                    "color": "#000000BF",
-                    "position": 0.42
-                  },
-                  {
-                    "color": "#0000002E",
-                    "position": 1
-                  }
-                ]
-              },
               "width": 1496,
               "height": 620
             },
@@ -373,12 +353,13 @@
               "type": "rectangle",
               "id": "ko7lm",
               "x": 0,
-              "y": 492,
+              "y": 0,
               "name": "vhHeroFadeL",
               "fill": {
                 "type": "gradient",
                 "gradientType": "linear",
                 "enabled": true,
+                "opacity": 0.5,
                 "rotation": 0,
                 "size": {
                   "height": 1
@@ -395,7 +376,7 @@
                 ]
               },
               "width": 1496,
-              "height": 128
+              "height": 620
             },
             {
               "type": "rectangle",
@@ -2728,7 +2709,7 @@
                   "id": "NPfwx",
                   "name": "vhFootCopyK",
                   "fill": "#9CA3AF",
-                  "content": "© 2024 Vehoway. Todos os direitos reservados.",
+                  "content": "© 2026 Vehoway. Todos os direitos reservados.",
                   "fontFamily": "Manrope",
                   "fontSize": 13,
                   "fontWeight": "500"
@@ -2786,7 +2767,7 @@
       "fill": {
         "type": "image",
         "enabled": true,
-        "url": "WhatsApp%20Image%202026-04-27%20at%2016.40.29.jpeg",
+        "url": "images/products-page-base.jpeg",
         "mode": "fill"
       },
       "width": 1787,
@@ -2800,7 +2781,7 @@
       "fill": {
         "type": "image",
         "enabled": true,
-        "url": "WhatsApp%20Image%202026-04-26%20at%2016.24.57-1.jpeg",
+        "url": "images/home-page-base.jpeg",
         "mode": "fill"
       },
       "width": 1524,
@@ -4047,7 +4028,7 @@
                                               "fill": {
                                                 "type": "image",
                                                 "enabled": true,
-                                                "url": "image-1.png",
+                                                "url": "images/image-1.png",
                                                 "mode": "fill"
                                               },
                                               "width": 24,
@@ -4268,7 +4249,7 @@
                                               "fill": {
                                                 "type": "image",
                                                 "enabled": true,
-                                                "url": "image-1.png",
+                                                "url": "images/image-1.png",
                                                 "mode": "fill"
                                               },
                                               "width": 24,
@@ -4489,7 +4470,7 @@
                                               "fill": {
                                                 "type": "image",
                                                 "enabled": true,
-                                                "url": "image-1.png",
+                                                "url": "images/image-1.png",
                                                 "mode": "fill"
                                               },
                                               "width": 24,
@@ -4719,7 +4700,7 @@
                                               "fill": {
                                                 "type": "image",
                                                 "enabled": true,
-                                                "url": "image-1.png",
+                                                "url": "images/image-1.png",
                                                 "mode": "fill"
                                               },
                                               "width": 24,
@@ -4940,7 +4921,7 @@
                                               "fill": {
                                                 "type": "image",
                                                 "enabled": true,
-                                                "url": "image-1.png",
+                                                "url": "images/image-1.png",
                                                 "mode": "fill"
                                               },
                                               "width": 24,
@@ -5161,7 +5142,7 @@
                                               "fill": {
                                                 "type": "image",
                                                 "enabled": true,
-                                                "url": "image-1.png",
+                                                "url": "images/image-1.png",
                                                 "mode": "fill"
                                               },
                                               "width": 24,
@@ -5286,7 +5267,7 @@
                               "fill": {
                                 "type": "image",
                                 "enabled": true,
-                                "url": "./images/generated-1777415607511.png",
+                                "url": "images/generated-1777415607511.png",
                                 "mode": "fill"
                               }
                             },
@@ -6525,7 +6506,7 @@
       "fill": {
         "type": "image",
         "enabled": true,
-        "url": "image-1.png",
+        "url": "images/image-1.png",
         "mode": "fill"
       },
       "width": 32,

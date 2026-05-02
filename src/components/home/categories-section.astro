@@ -17,11 +17,36 @@ export type HomeCategoryCard = {
 }
 
 const fallbackCategories: HomeCategoryCard[] = [
-  { id: 'carroceria', imageAlt: 'Linha de pecas para carroceria de bebidas', imageUrl: carroceria.src, name: 'Pecas Carroceria de Bebidas' },
-  { id: 'bau-frigorifico', imageAlt: 'Linha de pecas para bau frigorifico', imageUrl: bauFrigorifico.src, name: 'Pecas Inox Bau Frigorifico' },
-  { id: 'caminhoes', imageAlt: 'Linha de pecas e acessorios para caminhoes', imageUrl: caminhoes.src, name: 'Pecas e Acessorios Caminhoes' },
-  { id: 'implementos', imageAlt: 'Linha de pecas para implementos rodoviarios', imageUrl: implementos.src, name: 'Pecas Implementos Rodoviarios' },
-  { id: 'pneumatica', imageAlt: 'Linha de automacao industrial e pneumatica', imageUrl: pneumatica.src, name: 'Automacao Industrial Pneumatica' },
+  {
+    id: 'carroceria',
+    imageAlt: 'Linha de pecas para carroceria de bebidas',
+    imageUrl: carroceria.src,
+    name: 'Pecas Carroceria de Bebidas',
+  },
+  {
+    id: 'bau-frigorifico',
+    imageAlt: 'Linha de pecas para bau frigorifico',
+    imageUrl: bauFrigorifico.src,
+    name: 'Pecas Inox Bau Frigorifico',
+  },
+  {
+    id: 'caminhoes',
+    imageAlt: 'Linha de pecas e acessorios para caminhoes',
+    imageUrl: caminhoes.src,
+    name: 'Pecas e Acessorios Caminhoes',
+  },
+  {
+    id: 'implementos',
+    imageAlt: 'Linha de pecas para implementos rodoviarios',
+    imageUrl: implementos.src,
+    name: 'Pecas Implementos Rodoviarios',
+  },
+  {
+    id: 'pneumatica',
+    imageAlt: 'Linha de automacao industrial e pneumatica',
+    imageUrl: pneumatica.src,
+    name: 'Automacao Industrial Pneumatica',
+  },
 ]
 
 const categoriesResult = await sanityCategoriesCollection.getCategories().catch(() => [])

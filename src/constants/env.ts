@@ -7,11 +7,9 @@ const envSchema = z.object({
 })
 
 const env = envSchema.parse({
-  SANITY_API_TOKEN:
-    import.meta.env.SANITY_API_TOKEN ?? process.env.SANITY_API_TOKEN,
+  SANITY_API_TOKEN: import.meta.env.SANITY_API_TOKEN ?? process.env.SANITY_API_TOKEN,
   SANITY_DATASET: import.meta.env.SANITY_DATASET ?? process.env.SANITY_DATASET,
-  SANITY_PROJECT_ID:
-    import.meta.env.SANITY_PROJECT_ID ?? process.env.SANITY_PROJECT_ID,
+  SANITY_PROJECT_ID: import.meta.env.SANITY_PROJECT_ID ?? process.env.SANITY_PROJECT_ID,
 })
 
 export const ENV = {

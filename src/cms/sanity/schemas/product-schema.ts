@@ -41,22 +41,29 @@ export const productSchema = defineType({
       validation: (rule) => rule.required().min(1),
     }),
     defineField({
-      name: 'applications',
-      title: 'Aplicacoes',
+      name: 'application',
+      title: 'Aplicacao',
+      type: 'reference',
+      to: [{ type: 'application' }],
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'categories',
+      title: 'Categorias',
       type: 'array',
       of: [
         defineArrayMember({
           type: 'reference',
-          to: [{ type: 'application' }],
+          to: [{ type: 'category' }],
         }),
       ],
+      validation: (rule) => rule.required().min(1),
     }),
     defineField({
-      name: 'inStock',
-      title: 'Em estoque',
-      type: 'boolean',
-      initialValue: true,
-      validation: (rule) => rule.required(),
+      name: 'catalog',
+      title: 'Catalogo',
+      type: 'reference',
+      to: [{ type: 'catalog' }],
     }),
     defineField({
       name: 'isFeatured',

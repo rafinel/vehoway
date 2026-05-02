@@ -1,6 +1,6 @@
 ## 1. Preparar contratos e estrutura base
 
-- [x] 1.1 Confirmar e alinhar os DTOs de dominio para que `ProductDTO.image` e `CatalogDto.image` usem `ImageDto`
+- [x] 1.1 Confirmar e alinhar os DTOs de dominio para que `ProductDto.image` e `CatalogDto.image` usem `ImageDto`
 - [x] 1.2 Corrigir a inconsistência de nome/caminho relacionada a `PdfFileDto` e atualizar imports afetados
 - [x] 1.3 Definir a estrutura de arquivos de schemas dentro de `src/cms/sanity/schemas/` e o ponto de registro central
 

@@ -1,0 +1,39 @@
+---
+import { HugeiconsIcon } from '@hugeicons/react'
+import { Shield01Icon, Settings02Icon, TruckIcon } from '@hugeicons/core-free-icons'
+
+const proofItems = [
+  { icon: Shield01Icon, label: 'Catalogo tecnico confiavel' },
+  { icon: Settings02Icon, label: 'Busca por codigo e tags' },
+  { icon: TruckIcon, label: 'Apoio consultivo rapido' },
+]
+---
+
+<section class='relative overflow-hidden bg-vh-ink'>
+  <div class='absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.9),rgba(5,5,5,0.62),rgba(5,5,5,0.25))]'></div>
+  <div class='vh-shell relative grid gap-10 px-5 py-14 md:px-8 lg:grid-cols-[minmax(0,1fr)_max-content] lg:px-16'>
+    <div>
+      <div class='mb-5 h-1 w-[76px] rounded-full bg-vh-yellow'></div>
+      <p class='mb-4 text-sm font-bold uppercase tracking-[0.3em] text-vh-yellow'>
+        Home / Produtos
+      </p>
+      <h1 class='font-[var(--font-display)] text-4xl font-black leading-[0.94] tracking-[-0.05em] text-white md:text-6xl'>
+        Pecas e componentes
+      </h1>
+      <p class='mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg'>
+        Encontre pecas por nome, codigo ou tags. Filtre por categoria, aplicacao e catalogo para identificar rapidamente o item certo.
+      </p>
+    </div>
+
+    <div class='flex flex-wrap gap-2.5 self-start lg:max-w-[360px] lg:justify-end'>
+      {
+        proofItems.map(({ icon: Icon, label }) => (
+          <div class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-white shadow-[0_8px_20px_rgba(0,0,0,0.18)] backdrop-blur-sm'>
+            <HugeiconsIcon icon={Icon} className='h-[14px] w-[14px] text-vh-yellow' strokeWidth={2} />
+            <span>{label}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

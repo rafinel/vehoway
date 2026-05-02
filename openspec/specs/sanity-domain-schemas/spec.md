@@ -45,15 +45,37 @@ The system SHALL model `catalog.pdfFile` through the internal `pdfFile` object s
 - **WHEN** a catalog document stores a downloadable PDF
 - **THEN** it does so through the `pdfFile` object structure compatible with `PdfFileDto`
 
-### Requirement: Product applications SHALL be references to reusable application documents
-The `product` document SHALL store `applications` as references to `application` documents rather than inline strings or inline objects.
+### Requirement: Product application and categories SHALL be modeled as references
+The `product` document SHALL store `application` as a reference to an `application` document and `categories` as references to `category` documents rather than inline strings or inline objects.
 
-#### Scenario: Product links to reusable applications
-- **WHEN** an editor associates applications with a product
-- **THEN** the selected values are references to existing `application` documents
+#### Scenario: Product links to reusable taxonomy documents
+- **WHEN** an editor associates an application and one or more categories with a product
+- **THEN** the selected values are references to existing `application` and `category` documents
+
+### Requirement: Product catalog relation SHALL support optional product-to-catalog linking
+O sistema SHALL permitir que o documento `product` referencie um documento `catalog` de forma opcional, sem tornar essa associação obrigatória para publicação.
+
+#### Scenario: Editor associates a catalog to a product
+- **WHEN** um editor seleciona um catálogo para um produto no Studio
+- **THEN** o documento `product` armazena uma referência válida para `catalog`
+
+#### Scenario: Editor publishes a product without catalog
+- **WHEN** um editor publica um produto sem catálogo associado
+- **THEN** a validação do schema permite a publicação desde que os demais campos obrigatórios estejam corretos
+
+### Requirement: Product tags SHALL support textual discovery inputs
+O sistema SHALL modelar `product.tags` como uma lista opcional de strings reutilizável por consultas textuais da página pública de produtos.
+
+#### Scenario: Editor stores searchable product tags
+- **WHEN** um editor adiciona tags a um produto
+- **THEN** o documento armazena uma lista de strings compatível com consultas textuais por tags
+
+#### Scenario: Editor publishes a product without tags
+- **WHEN** um editor publica um produto sem tags
+- **THEN** a ausência de tags não bloqueia a publicação do produto
 
 ### Requirement: Required domain fields SHALL be validated in the schema
-The schema set SHALL validate the minimum required fields for domain integrity: `name` on all domain documents, `image` on `category`, `product` and `catalog`, `pdfFile` on `catalog`, and `code` on `product`.
+The schema set SHALL validate the minimum required fields for domain integrity: `name` on all domain documents, `image` on `category`, `product` and `catalog`, `pdfFile` on `catalog`, `code` on `product`, `application` on `product`, and at least one `category` on `product`.
 
 #### Scenario: Required fields are enforced during content authoring
 - **WHEN** an editor attempts to publish a document missing one of the required fields

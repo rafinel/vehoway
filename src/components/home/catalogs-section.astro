@@ -1,41 +1,36 @@
 ---
-import { HugeiconsIcon } from '@hugeicons/react';
-import {
-  ArrowRight01Icon,
-  ArrowUpRight01Icon,
-} from '@hugeicons/core-free-icons';
-import { sanityCatalogsCollection } from '@/cms/sanity/collections';
-import { HOME_PAGE_LIMITS } from '@/constants/home-page-limits';
-import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowRight01Icon, ArrowUpRight01Icon } from '@hugeicons/core-free-icons'
+import { sanityCatalogsCollection } from '@/cms/sanity/collections'
+import { HOME_PAGE_LIMITS } from '@/constants/home-page-limits'
+import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url'
 
 export type HomeCatalogCard = {
-  id: string;
-  imageAlt: string;
-  imageUrl: string;
-  name: string;
-  pdfUrl?: string;
-};
+  id: string
+  imageAlt: string
+  imageUrl: string
+  name: string
+  pdfUrl?: string
+}
 
-const catalogsResult = await sanityCatalogsCollection
-  .getCatalogs()
-  .catch(() => []);
+const catalogsResult = await sanityCatalogsCollection.getCatalogs().catch(() => [])
 
 const catalogs: HomeCatalogCard[] = catalogsResult
   .slice(0, HOME_PAGE_LIMITS.catalogs)
-  .map(catalog => ({
+  .map((catalog) => ({
     id: catalog.id,
     imageAlt: catalog.image.alt,
     imageUrl: catalog.image.url,
     name: catalog.name,
     pdfUrl: catalog.pdfFile.url,
-  }));
+  }))
 
 const whatsappUrl = buildWhatsAppUrl(
   'Olá, equipe da Vehoway Business. Quero orientação comercial sobre os catalogos publicados.',
-);
+)
 
-const featuredCatalog = catalogs[0];
-const sideCatalogs = catalogs.slice(1, 3);
+const featuredCatalog = catalogs[0]
+const sideCatalogs = catalogs.slice(1, 3)
 ---
 
 <section class='bg-vh-ink' id='catalogos'>

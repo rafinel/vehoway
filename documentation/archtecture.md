@@ -159,10 +159,10 @@ export const prerender = false
 | `name` | string | Nome da peça |
 | `code` | string | Código da peça (ex: "PR-1127") |
 | `image` | image | Foto do produto |
-| `applications` | array → string | Aplicações (ex: "Carreta Baú") |
+| `application` | reference → `application` | Aplicação principal da peça |
 | `inStock` | boolean | Exibe badge "Em estoque" |
 | `isFeatured` | boolean | Destaque na listagem |
-| `category` | reference → `category` | Categoria à qual pertence |
+| `categories` | array → reference `category` | Categorias às quais a peça pertence |
 | `catalog` | reference → `catalog` | Catálogo vinculado (opcional) |
 | `tags` | array → string | Atributos livres extras |
 
@@ -183,7 +183,8 @@ export const prerender = false
 **Relacionamentos:**
 
 ```
-category  1:N  product
+application 1:N product
+category  N:N  product
 category  1:N  catalog  (via product.catalog)
 product   N:1  catalog
 ```
@@ -306,7 +307,7 @@ Cache-Control: s-maxage=60, stale-while-revalidate=300
 | Busca full-text avançada | Volume alto de peças com busca por texto livre | Integrar Algolia ou Sanity Search API |
 | Catálogos com prévia interativa | Demanda por visualização antes do download | Integrar `pdfjs` como nova ilha React |
 | Analytics de peças mais buscadas | Estratégia de marketing mais madura | Integrar Plausible ou GA4 com eventos de filtro e clique |
-| Multi-categoria por peça | Peças que pertencem a mais de uma linha | Mudar `category` de `reference` para `array of references` no schema |
+| Multi-categoria por peça | Peças que pertencem a mais de uma linha | Atendido com `categories` como `array of references` no schema |
 
 **Pontos de atenção:**
 - 🚧 Cache TTL de 5 min pode ser ajustado conforme frequência de atualização do catálogo

@@ -1,43 +1,41 @@
 ---
-import { HugeiconsIcon } from '@hugeicons/react'
-import { ArrowRight01Icon, ArrowUpRight01Icon } from '@hugeicons/core-free-icons'
+import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  sanityCatalogsCollection,
-  sanityCategoriesCollection,
-} from '@/cms/sanity/collections'
-import { HOME_PAGE_LIMITS } from '@/constants/home-page-limits'
-import { ROUTES } from '@/constants/routes'
-import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url'
+  ArrowRight01Icon,
+  ArrowUpRight01Icon,
+} from '@hugeicons/core-free-icons';
+import { sanityCatalogsCollection } from '@/cms/sanity/collections';
+import { HOME_PAGE_LIMITS } from '@/constants/home-page-limits';
+import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
 
 export type HomeCatalogCard = {
-  id: string
-  imageAlt: string
-  imageUrl: string
-  name: string
-  pdfUrl?: string
-}
+  id: string;
+  imageAlt: string;
+  imageUrl: string;
+  name: string;
+  pdfUrl?: string;
+};
 
-const catalogsResult = await sanityCatalogsCollection.getCatalogs().catch(() => [])
-const categoriesResult = await sanityCategoriesCollection.getCategories().catch(
-  () => [],
-)
+const catalogsResult = await sanityCatalogsCollection
+  .getCatalogs()
+  .catch(() => []);
 
 const catalogs: HomeCatalogCard[] = catalogsResult
   .slice(0, HOME_PAGE_LIMITS.catalogs)
-  .map((catalog) => ({
+  .map(catalog => ({
     id: catalog.id,
     imageAlt: catalog.image.alt,
     imageUrl: catalog.image.url,
     name: catalog.name,
     pdfUrl: catalog.pdfFile.url,
-  }))
+  }));
 
 const whatsappUrl = buildWhatsAppUrl(
   'Olá, equipe da Vehoway Business. Quero orientação comercial sobre os catalogos publicados.',
-)
+);
 
-const featuredCatalog = catalogs[0]
-const sideCatalogs = catalogs.slice(1, 3)
+const featuredCatalog = catalogs[0];
+const sideCatalogs = catalogs.slice(1, 3);
 ---
 
 <section class='bg-vh-ink' id='catalogos'>
@@ -75,19 +73,6 @@ const sideCatalogs = catalogs.slice(1, 3)
           />
         </a>
       </div>
-      <div class='mt-4 flex flex-wrap gap-2'>
-        {
-          categoriesResult.slice(0, 4).map(category => (
-            <a
-              class='rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-semibold text-white/85 transition hover:bg-white/14 hover:text-white'
-              href={`${ROUTES.products}?category=${encodeURIComponent(category.id)}`}
-            >
-              {category.name}
-            </a>
-          ))
-        }
-      </div>
-
       <div class='mt-7 space-y-3'>
         {
           sideCatalogs.map(catalog => (

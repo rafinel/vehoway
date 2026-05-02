@@ -1,8 +1,12 @@
 ---
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowRight01Icon, ArrowUpRight01Icon } from '@hugeicons/core-free-icons'
-import { sanityCatalogsCollection } from '@/cms/sanity/collections'
+import {
+  sanityCatalogsCollection,
+  sanityCategoriesCollection,
+} from '@/cms/sanity/collections'
 import { HOME_PAGE_LIMITS } from '@/constants/home-page-limits'
+import { ROUTES } from '@/constants/routes'
 import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url'
 
 export type HomeCatalogCard = {
@@ -14,6 +18,9 @@ export type HomeCatalogCard = {
 }
 
 const catalogsResult = await sanityCatalogsCollection.getCatalogs().catch(() => [])
+const categoriesResult = await sanityCategoriesCollection.getCategories().catch(
+  () => [],
+)
 
 const catalogs: HomeCatalogCard[] = catalogsResult
   .slice(0, HOME_PAGE_LIMITS.catalogs)
@@ -67,6 +74,18 @@ const sideCatalogs = catalogs.slice(1, 3)
             strokeWidth={2.2}
           />
         </a>
+      </div>
+      <div class='mt-4 flex flex-wrap gap-2'>
+        {
+          categoriesResult.slice(0, 4).map(category => (
+            <a
+              class='rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-semibold text-white/85 transition hover:bg-white/14 hover:text-white'
+              href={`${ROUTES.products}?category=${encodeURIComponent(category.id)}`}
+            >
+              {category.name}
+            </a>
+          ))
+        }
       </div>
 
       <div class='mt-7 space-y-3'>

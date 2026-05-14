@@ -1,37 +1,47 @@
 ---
-import { HugeiconsIcon } from '@hugeicons/react'
+import { HugeiconsIcon } from '@hugeicons/react';
 import {
   BookOpenTextIcon,
   HeadsetIcon,
   TableRowsSplitIcon,
   TruckIcon,
-} from '@hugeicons/core-free-icons'
-import { HOME_PAGE_PARTNERS } from '@/constants/home-page-partners'
+} from '@hugeicons/core-free-icons';
+import { HOME_PAGE_PARTNERS } from '@/constants/home-page-partners';
 
 const benefits = [
   { icon: HeadsetIcon, label: 'Atendimento especializado' },
   { icon: TruckIcon, label: 'Pecas para implementos rodoviarios' },
   { icon: BookOpenTextIcon, label: 'Catalogos tecnicos atualizados' },
-  { icon: TableRowsSplitIcon, label: 'Solucoes para diversos segmentos' },
-]
+  { icon: TableRowsSplitIcon, label: 'Soluções para diversos segmentos' },
+];
 ---
 
-<section class="vh-shell space-y-10 border-y border-vh-border px-5 py-14 md:px-8">
-  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+<section
+  class='vh-shell space-y-10 border-y border-vh-border px-5 py-14 md:px-8'
+>
+  <div class='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
     {
-      benefits.map((benefit) => (
-        <div class="flex items-center gap-3 rounded-2xl border border-[#f4e3a8] bg-[#fff9e8] px-4 py-4 text-sm font-bold text-vh-copy">
-          <HugeiconsIcon icon={benefit.icon} className="h-5 w-5 shrink-0 text-vh-yellow" strokeWidth={2} />
+      benefits.map(benefit => (
+        <div class='flex items-center gap-3 rounded-2xl border border-[#f4e3a8] bg-[#fff9e8] px-4 py-4 text-sm font-bold text-vh-copy'>
+          <HugeiconsIcon
+            icon={benefit.icon}
+            className='h-5 w-5 shrink-0 text-vh-yellow'
+            strokeWidth={2}
+          />
           <span>{benefit.label}</span>
         </div>
       ))
     }
   </div>
 
-  <div class="grid gap-5 border-t border-vh-border pt-8 text-center sm:grid-cols-3 lg:grid-cols-6 lg:text-left">
+  <div
+    class='grid gap-5 border-t border-vh-border pt-8 text-center sm:grid-cols-3 lg:grid-cols-6 lg:text-left'
+  >
     {
-      HOME_PAGE_PARTNERS.map((partner) => (
-        <div class="font-[var(--font-display)] text-2xl font-extrabold tracking-[-0.03em] text-vh-muted">{partner}</div>
+      HOME_PAGE_PARTNERS.map(partner => (
+        <div class='font-[var(--font-display)] text-2xl font-extrabold tracking-[-0.03em] text-vh-muted'>
+          {partner}
+        </div>
       ))
     }
   </div>

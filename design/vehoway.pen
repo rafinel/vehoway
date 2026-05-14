@@ -3918,7 +3918,7 @@
                                               "id": "ewOOb",
                                               "name": "prodCard1AppsTitle",
                                               "fill": "$--black-primary",
-                                              "content": "Aplicações",
+                                              "content": "Categorias",
                                               "fontFamily": "Manrope",
                                               "fontSize": 11,
                                               "fontWeight": "900"
@@ -4139,7 +4139,7 @@
                                               "id": "rjQPa",
                                               "name": "prodCard2AppsTitle",
                                               "fill": "$--black-primary",
-                                              "content": "Aplicações",
+                                              "content": "Categorias",
                                               "fontFamily": "Manrope",
                                               "fontSize": 11,
                                               "fontWeight": "900"
@@ -4360,7 +4360,7 @@
                                               "id": "fZ1Jl",
                                               "name": "prodCard3AppsTitle",
                                               "fill": "$--black-primary",
-                                              "content": "Aplicações",
+                                              "content": "Categorias",
                                               "fontFamily": "Manrope",
                                               "fontSize": 11,
                                               "fontWeight": "900"
@@ -4590,7 +4590,7 @@
                                               "id": "sbZGK",
                                               "name": "prodCard4AppsTitle",
                                               "fill": "$--black-primary",
-                                              "content": "Aplicações",
+                                              "content": "Categorias",
                                               "fontFamily": "Manrope",
                                               "fontSize": 11,
                                               "fontWeight": "900"
@@ -4811,7 +4811,7 @@
                                               "id": "T6oJrc",
                                               "name": "prodCard5AppsTitle",
                                               "fill": "$--black-primary",
-                                              "content": "Aplicações",
+                                              "content": "Categorias",
                                               "fontFamily": "Manrope",
                                               "fontSize": 11,
                                               "fontWeight": "900"
@@ -5032,7 +5032,7 @@
                                               "id": "zAOa1",
                                               "name": "prodCard6AppsTitle",
                                               "fill": "$--black-primary",
-                                              "content": "Aplicações",
+                                              "content": "Categorias",
                                               "fontFamily": "Manrope",
                                               "fontSize": 11,
                                               "fontWeight": "900"
@@ -5297,7 +5297,7 @@
                                   "id": "XBlRf",
                                   "name": "appsTitle",
                                   "fill": "$--black-primary",
-                                  "content": "Aplicações",
+                                  "content": "Categorias",
                                   "fontFamily": "Manrope",
                                   "fontSize": 14,
                                   "fontWeight": "900"

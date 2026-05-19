@@ -31,3 +31,8 @@ pnpm-debug.log*
 
 # Agents
 prompt.md
+
+wordpress
+uploads.ini
+
+docker-compose.yaml

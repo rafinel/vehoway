@@ -97,9 +97,7 @@ export function useProductsPageState() {
       }
 
       const current = currentProductId ?? ''
-      const hasCurrent = current
-        ? items.some((item) => item.id === current)
-        : false
+      const hasCurrent = current ? items.some((item) => item.id === current) : false
 
       if (!hasCurrent) {
         await setProduct(items[0]?.id ?? '')

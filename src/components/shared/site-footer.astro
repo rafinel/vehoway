@@ -1,22 +1,20 @@
 ---
-import { HugeiconsIcon } from '@hugeicons/react';
+import { HugeiconsIcon } from '@hugeicons/react'
 import {
   ArrowUpRight01Icon,
   Home03Icon,
   Mail01Icon,
   WhatsappIcon,
-} from '@hugeicons/core-free-icons';
-import { sanityCategoriesCollection } from '@/cms/sanity/collections';
-import { ROUTES } from '@/constants/routes';
-import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
+} from '@hugeicons/core-free-icons'
+import { sanityCategoriesCollection } from '@/cms/sanity/collections'
+import { ROUTES } from '@/constants/routes'
+import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url'
 
-const categoriesResult = await sanityCategoriesCollection
-  .getCategories()
-  .catch(() => []);
+const categoriesResult = await sanityCategoriesCollection.getCategories().catch(() => [])
 
 const whatsappUrl = buildWhatsAppUrl(
   'Ola, equipe Vehoway. Quero falar com o contato comercial da homepage.',
-);
+)
 ---
 
 <footer class='bg-vh-ink text-white' id='footer'>

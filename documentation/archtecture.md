@@ -29,23 +29,23 @@
 | FR-05 | WhatsApp com mensagem pré-preenchida por categoria/peça |
 | FR-06 | Admin (Sanity Studio) com CRUD + publish/unpublish |
 | FR-07 | Paginação client-side na listagem de produtos |
-| NFR-01 | Performance: home estática na CDN, products com cache stale-while-revalidate |
+| NFR-01 | Performance: páginas estáticas na CDN, filtros executados no cliente |
 | NFR-02 | Manutenibilidade: conteúdo atualizável sem deploy de código |
 | NFR-03 | SEO: páginas indexáveis pelo Google |
 
 **Restrições:**
 - Frontend obrigatório: Astro JS
 - CMS obrigatório: Sanity
-- Renderização: SSG híbrido (`output: 'hybrid'`) — home SSG, products SSR
+- Renderização: SSG puro (`output: 'static'`) — home e products gerados no build
 - Hosting: Netlify
 
 ---
 
 ## 2. Padrão Arquitetural
 
-**Padrão Selecionado:** JAMstack híbrido — SSG + SSR com CMS Headless
+**Padrão Selecionado:** JAMstack estático — SSG com CMS Headless
 
-**Justificativa:** Home é conteúdo estático — SSG é ideal. Products precisa de filtros e paginação server-side com dados frescos do Sanity — SSR com cache resolve sem overhead de client-side pesado.
+**Justificativa:** O site é vitrine e pode ser servido integralmente pela CDN. Products carrega o catálogo no build e aplica busca, filtros e paginação no cliente, eliminando dependência de funções serverless em runtime.
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -54,16 +54,16 @@
                        │ HTTPS
 ┌──────────────────────▼──────────────────────────┐
 │              Netlify CDN Edge                    │
-│     (SSG cache / SSR stale-while-revalidate)     │
+│             (arquivos estáticos)                 │
 └──────────┬───────────────────────┬──────────────┘
            │                       │
 ┌──────────▼──────────┐ ┌──────────▼──────────────┐
-│   / (SSG)           │ │   /products (SSR)        │
-│   gerado em build   │ │   renderizado por request│
-│   servido da CDN    │ │   cache + revalidação    │
+│   / (SSG)           │ │   /products (SSG)        │
+│   gerado em build   │ │   gerado em build        │
+│   servido da CDN    │ │   filtros no cliente     │
 └──────────┬──────────┘ └──────────┬───────────────┘
-           │                       │ GROQ (runtime)
-           │ GROQ (build time)     │
+           │                       │ GROQ (build time)
+            │ GROQ (build time)     │
 ┌──────────▼───────────────────────▼───────────────┐
 │               Sanity Content Lake                 │
 │      dados + Asset CDN (PDFs, imagens)            │
@@ -78,8 +78,8 @@
 
 | Padrão | Por que foi descartado |
 |---|---|
-| SSG puro | Filtros e paginação exigiriam payload completo no client — não escala |
-| SSR total | Home não precisa de servidor — SSG é mais performático e barato |
+| SSR híbrido | Adiciona função serverless e execução por request sem necessidade para o escopo atual |
+| Fetch client-side direto no Sanity | Dados mais frescos, mas pior HTML inicial para SEO e mais dependência de rede no browser |
 
 ---
 
@@ -90,21 +90,18 @@
 | Página | Rota | Rendering | Responsabilidade |
 |---|---|---|---|
 | Home | `/` | SSG | Hero, cards de categorias e catálogos |
-| Products | `/products` | SSR (`prerender = false`) | Filtros server-side via query params, paginação, listagem |
+| Products | `/products` | SSG | Filtros client-side via query params, paginação, listagem |
 
 **Configuração Astro:**
 ```ts
 // astro.config.mjs
-output: 'hybrid'
-
-// src/pages/products.astro
-export const prerender = false
+output: 'static'
 ```
 
 **Ilhas Interativas (Astro Islands — React):**
 
 #### `<ProductsFilter />`
-- **Responsabilidade:** dropdowns de filtro (Categoria, Aplicação, Catálogo) + chips de filtros ativos + paginação. Atualiza query params na URL e trigga novo request SSR
+- **Responsabilidade:** dropdowns de filtro (Categoria, Aplicação, Catálogo) + chips de filtros ativos + paginação. Atualiza query params na URL e filtra os dados já carregados no cliente
 - **Interface:** recebe `categories`, `applications`, `catalogs` como props; sincroniza estado com URL
 - **NFRs cobertos:** UX mobile, URLs compartilháveis e bookmarkáveis
 
@@ -133,7 +130,7 @@ export const prerender = false
 | Contexto | Estratégia |
 |---|---|
 | Home (`/`) | GROQ em build time |
-| Products (`/products`) | GROQ em runtime via `Astro.request` + query params — filtros e paginação resolvidos no servidor |
+| Products (`/products`) | GROQ em build time; filtros e paginação resolvidos no cliente com query params |
 
 **Observação:** contato comercial não é gerido pelo Sanity nesta versão. O WhatsApp é global e configurado no frontend; profissionais exibidos na home são hardcoded no frontend.
 
@@ -195,11 +192,11 @@ product   N:1  catalog
 
 | NFR | Requisito | Decisão Arquitetural |
 |---|---|---|
-| Performance | Carregamento rápido | SSG para home + cache CDN/SSR na Netlify para `/products` |
-| SEO | Páginas indexáveis | HTML renderizado no servidor (SSR) — Google indexa sem JS |
-| Manutenibilidade | Conteúdo atualizável sem deploy de código | Sanity Studio com publish/unpublish + dados frescos em runtime no SSR |
-| Escalabilidade | Suportar picos de acesso | Netlify Edge/CDN + cache absorvem picos sem escalar servidor |
-| Disponibilidade | Site resiliente | Home SSG na CDN não depende do Sanity em runtime |
+| Performance | Carregamento rápido | SSG para home e `/products`, servidos pela CDN da Netlify |
+| SEO | Páginas indexáveis | HTML estático gerado no build com conteúdo inicial indexável |
+| Manutenibilidade | Conteúdo atualizável sem deploy manual | Sanity Studio com publish/unpublish + webhook de rebuild na Netlify |
+| Escalabilidade | Suportar picos de acesso | Netlify Edge/CDN absorve picos sem função serverless |
+| Disponibilidade | Site resiliente | Páginas estáticas na CDN não dependem do Sanity em runtime |
 | Manutenibilidade de código | Código legível e expansível | Componentes React em inglês, queries centralizadas, schemas tipados |
 | UX Mobile | Experiência equivalente ao desktop | DaisyUI mobile-first + React islands com suporte a touch |
 
@@ -209,14 +206,15 @@ product   N:1  catalog
 
 | Camada | Tecnologia | Justificativa |
 |---|---|---|
-| Framework | Astro JS | SSG + SSR híbrido nativo, islands architecture |
+| Framework | Astro JS | SSG nativo, islands architecture |
 | Styling | Tailwind CSS | Base utilitária para layout, responsividade e tokens de interface |
 | UI | DaisyUI | Componentes prontos (modal, card, drawer, badge) sobre Tailwind, sem runtime overhead |
 | Islands | React | Ecossistema maduro, DX superior para filtros e estado de UI |
 | CMS | Sanity | Headless, GROQ flexível, Asset CDN integrado |
+| Admin | Sanity Studio em `/admin` | Studio embutido com hash routing para compatibilidade com build estático |
 | Linguagem | TypeScript | Tipagem dos schemas e queries garante segurança |
-| Hosting | Netlify | Suporte a Astro SSR, CDN global, functions e preview deploys |
-| Adapter | `@astrojs/netlify` | Habilita SSR no Astro com output otimizado para Netlify |
+| Hosting | Netlify | CDN global e preview deploys para build estático |
+| Adapter | Nenhum | Build estático padrão do Astro |
 | CI/CD | Netlify + webhook Sanity | Deploy automático no push + rebuild da home ao publicar no Studio |
 | Assets | Sanity Asset CDN | PDFs e imagens servidos pelo Sanity — zero infraestrutura extra |
 
@@ -224,17 +222,17 @@ product   N:1  catalog
 
 ## 7. Análise de Trade-offs
 
-#### SSG híbrido vs SSG puro
-- **Escolha feita:** SSG para home + SSR para products
-- **Alternativa:** SSG puro com filtro client-side
-- **Trade-off:** SSR adiciona latência por request no `/products`; mitigado com cache `stale-while-revalidate`
-- **Por que aceitável:** filtros e paginação server-side escalam sem limite de payload
+#### SSG puro vs renderização por request
+- **Escolha feita:** SSG para home e products, com filtros client-side
+- **Alternativa:** renderizar `/products` por request com consultas GROQ em execução
+- **Trade-off:** conteúdo publicado no Sanity só aparece após rebuild; mitigado com webhook de deploy
+- **Por que aceitável:** catálogo de peças industriais não muda em tempo real e o site ganha simplicidade operacional
 
-#### Cache `stale-while-revalidate` vs dados sempre frescos
-- **Escolha feita:** `s-maxage=60, stale-while-revalidate=300`
-- **Alternativa:** sem cache — request direto ao Sanity em todo acesso
-- **Trade-off:** conteúdo pode ter até 5 min de defasagem
-- **Por que aceitável:** catálogo de peças industriais não muda em tempo real
+#### Payload do catálogo vs chamadas em runtime
+- **Escolha feita:** carregar produtos no build e filtrar no browser
+- **Alternativa:** consultar Sanity no browser a cada filtro
+- **Trade-off:** bundle/dados iniciais crescem com o catálogo
+- **Por que aceitável:** escopo inicial é vitrine e elimina CORS, tokens e dependência de rede em cada filtro
 
 #### React vs Vanilla JS para ilhas
 - **Escolha feita:** React
@@ -252,7 +250,7 @@ product   N:1  catalog
 
 ## 8. Arquitetura de Deploy
 
-**Plataforma:** Netlify com `@astrojs/netlify` adapter.
+**Plataforma:** Netlify com build estático do Astro.
 
 ```
 ┌─────────────────────────────────────┐
@@ -264,18 +262,16 @@ product   N:1  catalog
 │              Netlify                │
 │  1. recebe webhook / push main      │
 │  2. roda astro build                │
-│  3. gera / (SSG estático)           │
-│  4. deploy serverless /products     │
+│  3. gera / e /products (SSG)        │
+│  4. publica arquivos estáticos      │
 └──────────────────┬──────────────────┘
                    │
        ┌───────────┴────────────┐
        │                        │
-┌──────▼──────┐        ┌────────▼────────┐
-│  CDN Edge   │        │ Serverless Fn   │
-│  / (SSG)    │        │ /products (SSR) │
-│             │        │ GROQ → Sanity   │
-└──────┬──────┘        └────────┬────────┘
-       └───────────┬────────────┘
+┌─────────────────────────────────────┐
+│              CDN Edge               │
+│      / e /products estáticos        │
+└──────────────────┬──────────────────┘
                    │ HTTPS
 ┌──────────────────▼──────────────────┐
 │            Browser                  │
@@ -291,10 +287,7 @@ product   N:1  catalog
 | Preview | Branch feature → Netlify preview deploy automático por branch/PR |
 | Production | Push na `main` → build e deploy automático na Netlify |
 
-**Cache headers em `/products`:**
-```
-Cache-Control: s-maxage=60, stale-while-revalidate=300
-```
+**Atualização de conteúdo:** publicações no Sanity disparam rebuild na Netlify para regenerar HTML e payloads estáticos.
 
 **Rollback:** histórico completo de deploys na Netlify com opção de restaurar deploy anterior.
 
@@ -312,7 +305,7 @@ Cache-Control: s-maxage=60, stale-while-revalidate=300
 **Pontos de atenção:**
 - 🚧 Cache TTL de 5 min pode ser ajustado conforme frequência de atualização do catálogo
 - 🚧 Limite de banda do plano Sanity para PDFs — monitorar se os downloads crescerem
-- 💡 Assunção: Sanity free tier cobre o volume de requests SSR em runtime
+- 💡 Assunção: Sanity free tier cobre o volume de requests de build e assets públicos
 
 **Dívidas técnicas conhecidas:**
-- Sem monitoramento formal de erros — adicionar Sentry no futuro para rastrear falhas no SSR
+- Sem monitoramento formal de erros — adicionar Sentry no futuro para rastrear falhas client-side

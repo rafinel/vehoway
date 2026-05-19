@@ -52,6 +52,14 @@ const PRODUCT_PROJECTION = `{
 
 export const SanityProductsCollection = (sanity: SanityClient): ProductsCollection => {
   return {
+    getAllProducts: async (): Promise<ProductDto[]> => {
+      return await sanity.fetch<ProductDto[]>(`
+        *[
+          _type == "product" &&
+          !(_id in path("drafts.**"))
+        ] | order(isFeatured desc, name asc) ${PRODUCT_PROJECTION}
+      `)
+    },
     getProducts: async (filters: ProductFiltersDto): Promise<PaginatedProductsDto> => {
       const page = Math.max(1, filters.page || 1)
       const pageSize = Math.max(1, filters.pageSize || 6)

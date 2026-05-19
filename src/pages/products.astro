@@ -3,6 +3,7 @@ import {
   sanityApplicationsCollection,
   sanityCatalogsCollection,
   sanityCategoriesCollection,
+  sanityProductsCollection,
 } from '@/cms/sanity/collections'
 import ProductsPage from '@/components/products/products-page'
 import ProductsHero from '@/components/products/products-hero.astro'
@@ -10,13 +11,12 @@ import SiteFooter from '@/components/shared/site-footer.astro'
 import SiteHeader from '@/components/shared/site-header.astro'
 import BaseLayout from '@/layouts/base-layout.astro'
 
-const [applications, catalogs, categories] = await Promise.all([
+const [applications, catalogs, categories, products] = await Promise.all([
   sanityApplicationsCollection.getApplications().catch(() => []),
   sanityCatalogsCollection.getCatalogs().catch(() => []),
   sanityCategoriesCollection.getCategories().catch(() => []),
+  sanityProductsCollection.getAllProducts().catch(() => []),
 ])
-
-export const prerender = false
 ---
 
 <BaseLayout
@@ -30,6 +30,7 @@ export const prerender = false
       applications={applications}
       catalogs={catalogs}
       categories={categories}
+      products={products}
       client:only='react'
     />
   </main>

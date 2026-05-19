@@ -4,19 +4,19 @@ import 'dotenv/config'
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 
-import netlify from '@astrojs/netlify'
 import sanity from '@sanity/astro'
 import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: netlify(),
+  output: 'static',
   integrations: [
     sanity({
       apiVersion: 'v2023-08-24',
       dataset: process.env.SANITY_DATASET,
       projectId: process.env.SANITY_PROJECT_ID,
       studioBasePath: '/admin',
+      studioRouterHistory: 'hash',
       useCdn: false,
     }),
     react(),

@@ -1,21 +1,21 @@
 ---
-import { HugeiconsIcon } from '@hugeicons/react';
-import { ArrowRight01Icon } from '@hugeicons/core-free-icons';
-import bauFrigorifico from '@/assets/images/bau-frigorifico.png';
-import caminhoes from '@/assets/images/caminhoes.png';
-import carroceria from '@/assets/images/carroceria.png';
-import implementos from '@/assets/images/implementos.png';
-import pneumatica from '@/assets/images/pneumatica.png';
-import { sanityCategoriesCollection } from '@/cms/sanity/collections';
-import { HOME_PAGE_LIMITS } from '@/constants/home-page-limits';
-import { ROUTES } from '@/constants/routes';
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
+import bauFrigorifico from '@/assets/images/bau-frigorifico.png'
+import caminhoes from '@/assets/images/caminhoes.png'
+import carroceria from '@/assets/images/carroceria.png'
+import implementos from '@/assets/images/implementos.png'
+import pneumatica from '@/assets/images/pneumatica.png'
+import { sanityCategoriesCollection } from '@/cms/sanity/collections'
+import { HOME_PAGE_LIMITS } from '@/constants/home-page-limits'
+import { ROUTES } from '@/constants/routes'
 
 export type HomeCategoryCard = {
-  id: string;
-  imageAlt: string;
-  imageUrl: string;
-  name: string;
-};
+  id: string
+  imageAlt: string
+  imageUrl: string
+  name: string
+}
 
 const fallbackCategories: HomeCategoryCard[] = [
   {
@@ -48,21 +48,19 @@ const fallbackCategories: HomeCategoryCard[] = [
     imageUrl: pneumatica.src,
     name: 'Automacao Industrial Pneumatica',
   },
-];
+]
 
-const categoriesResult = await sanityCategoriesCollection
-  .getCategories()
-  .catch(() => []);
+const categoriesResult = await sanityCategoriesCollection.getCategories().catch(() => [])
 
 const categories =
   categoriesResult.length > 0
-    ? categoriesResult.slice(0, HOME_PAGE_LIMITS.categories).map(category => ({
+    ? categoriesResult.slice(0, HOME_PAGE_LIMITS.categories).map((category) => ({
         id: category.id,
         imageAlt: category.image.alt,
         imageUrl: category.image.url,
         name: category.name,
       }))
-    : fallbackCategories;
+    : fallbackCategories
 ---
 
 <section class='vh-shell px-5 py-12 md:px-8 md:py-16' id='categorias'>

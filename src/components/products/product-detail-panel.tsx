@@ -42,10 +42,7 @@ export default function ProductDetailPanel({ product }: ProductDetailPanelProps)
         </p>
         <div className='flex flex-col gap-2'>
           {product.categories.map((category) => (
-            <div
-              className='flex items-center gap-2'
-              key={category.id}
-            >
+            <div className='flex items-center gap-2' key={category.id}>
               <span className='inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#E8F9EE] text-[11px] font-black text-[#22C55E]'>
                 ✓
               </span>

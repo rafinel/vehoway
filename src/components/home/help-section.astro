@@ -1,11 +1,10 @@
 ---
-import { HugeiconsIcon } from '@hugeicons/react'
-import { HeadsetIcon } from '@hugeicons/core-free-icons'
-import { HOME_PAGE_SPECIALISTS } from '@/constants/home-page-specialists'
-import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url'
+import { HugeiconsIcon } from '@hugeicons/react';
+import { HeadsetIcon } from '@hugeicons/core-free-icons';
+import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
 
 const whatsappMessage =
-  'Ola, equipe Vehoway. Quero falar com um especialista sobre pecas e catalogos.'
+  'Ola, equipe Vehoway. Quero falar com um especialista sobre pecas e catalogos.';
 ---
 
 <section
@@ -30,38 +29,34 @@ const whatsappMessage =
 
   <div class='grid gap-5 md:grid-cols-2'>
     {
-      HOME_PAGE_SPECIALISTS.map(specialist => (
+      (
         <article class='rounded-[16px] border border-vh-border bg-white p-5 shadow-[0_10px_28px_rgba(15,23,42,0.08)]'>
           <div class='mb-5 flex items-center gap-4'>
-            <div class='grid h-14 w-14 place-items-center rounded-2xl bg-vh-ink text-lg font-black text-vh-yellow'>
-              {specialist.initials}
+            <div class='grid h-12 w-12 place-items-center rounded-2xl bg-vh-ink text-lg font-black text-vh-yellow'>
+              <HugeiconsIcon
+                icon={HeadsetIcon}
+                className='h-[24px] w-[24px]'
+                strokeWidth={2}
+              />
             </div>
             <div>
-              <h3 class='font-[var(--font-display)] text-lg font-extrabold tracking-[-0.03em] text-vh-copy'>
-                {specialist.name}
+              <h3 class='font-[var(--font-display)] text-xl font-extrabold tracking-[-0.03em] text-vh-copy'>
+                Atendimento Comercial
               </h3>
-              <p class='text-sm font-semibold text-vh-muted'>
-                {specialist.role}
-              </p>
             </div>
           </div>
           <div>
             <a
               class='vh-button-primary w-full'
-              href={buildWhatsAppUrl(whatsappMessage, specialist.whatsappNumber)}
+              href={buildWhatsAppUrl(whatsappMessage, '11 99023-7851')}
               rel='noreferrer'
               target='_blank'
             >
-              <HugeiconsIcon
-                icon={HeadsetIcon}
-                className='h-[17px] w-[17px]'
-                strokeWidth={2}
-              />
               Chamar no WhatsApp
             </a>
           </div>
         </article>
-      ))
+      )
     }
   </div>
 </section>

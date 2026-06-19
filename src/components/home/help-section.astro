@@ -2,9 +2,10 @@
 import { HugeiconsIcon } from '@hugeicons/react';
 import { HeadsetIcon } from '@hugeicons/core-free-icons';
 import { buildWhatsAppUrl } from '@/utils/build-whatsapp-url';
+import { CONTACT } from '@/constants/contact';
 
 const whatsappMessage =
-  'Ola, equipe Vehoway. Quero falar com um especialista sobre pecas e catalogos.';
+  'Ola, equipe Vehoway. Quero falar com um especialista sobre peças e catálogos.';
 ---
 
 <section
@@ -48,7 +49,7 @@ const whatsappMessage =
           <div>
             <a
               class='vh-button-primary w-full'
-              href={buildWhatsAppUrl(whatsappMessage, '11 99023-7851')}
+              href={buildWhatsAppUrl(whatsappMessage, CONTACT.whatsappNumber)}
               rel='noreferrer'
               target='_blank'
             >

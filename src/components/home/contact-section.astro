@@ -1,0 +1,95 @@
+---
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  Briefcase02Icon,
+  Store01Icon,
+} from '@hugeicons/core-free-icons';
+
+const commercialContacts = [
+  {
+    label: 'Administrativo',
+    email: 'Admvehoway@outlook.com',
+    phone: '11 99023-7851',
+    phoneHref: 'tel:+5511990237851',
+    icon: Briefcase02Icon,
+  },
+  {
+    label: 'Vendas',
+    email: 'vendasvehoway@outlook.com',
+    phone: '11 93936-8766',
+    phoneHref: 'tel:+5511939368766',
+    icon: Store01Icon,
+  },
+];
+---
+
+<section class='vh-shell px-5 py-14 md:px-8' id='contato'>
+  <div
+    class='grid gap-8 lg:grid-cols-[minmax(260px,0.7fr)_minmax(0,1.3fr)] lg:items-end'
+  >
+    <div>
+      <p
+        class='mb-3 text-sm font-bold uppercase tracking-[0.24em] text-vh-brown'
+      >
+        Contato comercial
+      </p>
+      <h2
+        class='font-[var(--font-display)] text-3xl font-black leading-[0.98] tracking-[-0.04em] text-vh-copy md:text-4xl'
+      >
+        Fale diretamente com a equipe Vehoway.
+      </h2>
+      <p class='mt-4 max-w-md text-base leading-7 text-vh-muted'>
+        Escolha o canal ideal: cada contato abaixo já indica a área e o telefone
+        correspondente ao e-mail.
+      </p>
+    </div>
+
+    <div class='grid gap-4 sm:grid-cols-2'>
+      {
+        commercialContacts.map(contact => (
+          <article class='rounded-[16px] border border-vh-border bg-white p-5 shadow-[0_10px_28px_rgba(15,23,42,0.08)] transition-transform duration-200 hover:-translate-y-1'>
+            <div class='flex items-center gap-4'>
+              <div
+                aria-hidden='true'
+                class='grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-vh-ink text-vh-yellow'
+              >
+                <HugeiconsIcon
+                  icon={contact.icon}
+                  className='h-6 w-6'
+                  strokeWidth={2}
+                />
+              </div>
+              <h3 class='font-[var(--font-display)] text-xl font-extrabold tracking-[-0.03em] text-vh-copy'>
+                {contact.label}
+              </h3>
+            </div>
+            <div class='mt-5 space-y-3'>
+              <div>
+                <p class='text-xs font-bold uppercase tracking-[0.14em] text-vh-muted'>
+                  E-mail
+                </p>
+                <a
+                  class='mt-1 block break-words text-sm font-bold text-vh-copy underline decoration-vh-yellow decoration-2 underline-offset-4 hover:text-vh-brown'
+                  href={`mailto:${contact.email}`}
+                >
+                  {contact.email}
+                </a>
+              </div>
+              <div>
+                <p class='text-xs font-bold uppercase tracking-[0.14em] text-vh-muted'>
+                  Telefone correspondente
+                </p>
+                <a
+                  class='mt-1 block text-lg font-extrabold text-vh-copy hover:text-vh-brown'
+                  href={contact.phoneHref}
+                >
+                  {contact.phone}
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

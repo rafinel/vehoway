@@ -1,22 +1,12 @@
 ---
-import BaseLayout from '@/layouts/base-layout.astro'
-import CatalogsSection from '@/components/home/catalogs-section.astro'
-import CredibilitySection from '@/components/home/credibility-section.astro'
-import HomeHero from '@/components/home/home-hero.astro'
-import HelpSection from '@/components/home/help-section.astro'
-import CategoriesSection from '@/components/home/categories-section.astro'
-import SiteHeader from '@/components/shared/site-header.astro'
-import SiteFooter from '@/components/shared/site-footer.astro'
-
-const commercialEmails = [
-  'Admvehoway@outlook.com',
-  'vendasvehoway@outlook.com',
-]
-
-const commercialPhones = [
-  { label: '11 99023-7851', href: 'tel:+5511990237851' },
-  { label: '11 93936-8766', href: 'tel:+5511939368766' },
-]
+import BaseLayout from '@/layouts/base-layout.astro';
+import CatalogsSection from '@/components/home/catalogs-section.astro';
+import CredibilitySection from '@/components/home/credibility-section.astro';
+import ContactSection from '@/components/home/contact-section.astro';
+import HomeHero from '@/components/home/home-hero.astro';
+import CategoriesSection from '@/components/home/categories-section.astro';
+import SiteHeader from '@/components/shared/site-header.astro';
+import SiteFooter from '@/components/shared/site-footer.astro';
 ---
 
 <BaseLayout>
@@ -25,47 +15,7 @@ const commercialPhones = [
     <HomeHero />
     <CategoriesSection />
     <CatalogsSection />
-    <HelpSection />
-    <section class='vh-shell px-5 py-14 md:px-8' id='contato'>
-      <div class='rounded-[16px] border border-vh-border bg-white p-6 shadow-[0_10px_28px_rgba(15,23,42,0.08)] md:p-8'>
-        <p class='mb-3 text-sm font-bold uppercase tracking-[0.24em] text-vh-brown'>
-          Contato comercial
-        </p>
-        <h2 class='font-[var(--font-display)] text-3xl font-black tracking-[-0.04em] text-vh-copy md:text-4xl'>
-          Fale com a Vehoway
-        </h2>
-        <div class='mt-6 grid gap-6 md:grid-cols-2'>
-          <div>
-            <p class='mb-2 text-sm font-bold uppercase tracking-[0.16em] text-vh-muted'>
-              E-mails
-            </p>
-            <div class='space-y-2'>
-              {
-                commercialEmails.map(email => (
-                  <a class='block text-base font-semibold text-vh-copy underline decoration-vh-yellow decoration-2 underline-offset-4 hover:text-vh-brown' href={`mailto:${email}`}>
-                    {email}
-                  </a>
-                ))
-              }
-            </div>
-          </div>
-          <div>
-            <p class='mb-2 text-sm font-bold uppercase tracking-[0.16em] text-vh-muted'>
-              Telefones
-            </p>
-            <div class='space-y-2'>
-              {
-                commercialPhones.map(phone => (
-                  <a class='block text-base font-semibold text-vh-copy underline decoration-vh-yellow decoration-2 underline-offset-4 hover:text-vh-brown' href={phone.href}>
-                    {phone.label}
-                  </a>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ContactSection />
     <CredibilitySection />
   </main>
   <SiteFooter />
